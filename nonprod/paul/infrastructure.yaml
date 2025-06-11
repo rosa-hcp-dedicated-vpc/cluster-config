@@ -1,7 +1,7 @@
 #################################################################
 # teamName used for argocd applicaiton names and namespace names.
 #################################################################
-teamName: platform
+teamName: cluster-config
 #################################################################
 # default Values for gitops-payload helm chart
 #################################################################
