@@ -21,7 +21,7 @@ defaults:
 #################################################################
 infrastructure:
   - chart: cluster-efs
-    targetRevision: 0.0.9
+    targetRevision: 0.1.0
     namespace: openshift-cluster-csi-drivers
     values:
       roleArn: arn:aws:iam::808082629126:role/rosa-test-1-rosa-efs-csi-role-iam
