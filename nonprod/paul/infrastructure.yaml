@@ -10,11 +10,11 @@ defaults:
   finalizers: resources-finalizer.argocd.argoproj.io
   gitopsNamespace: openshift-gitops
   # Helm defaults
-  helmRepoUrl: https://pages.github/helm-charts
+  helmRepoUrl: https://rosa-hcp-dedicated-vpc.github.io/helm-repository/
   path: charts
   # Vault plugin defaults.
   plugin: true
-  AWS_REGION: "ap-southeast-4"
+  AWS_REGION: "ap-southeast-2"
   AVP_TYPE: "awssecretsmanager"
 #################################################################
 # INFRASTRUCTURE Charts to be deployed.
