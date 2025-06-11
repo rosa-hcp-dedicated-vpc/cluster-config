@@ -21,12 +21,14 @@ defaults:
 #################################################################
 infrastructure:
   - chart: cluster-efs
-    targetRevision: 0.1.1
+    targetRevision: 0.1.2
     namespace: openshift-cluster-csi-drivers
     values:
       roleArn: arn:aws:iam::808082629126:role/rosa-test-1-rosa-efs-csi-role-iam
       fileSystemId: fs-0dd464e83e33f98a3
-      csv: aws-efs-csi-driver-operator.v4.18.0-202506020833
+      helper-operator:
+        subscription:
+          csv: aws-efs-csi-driver-operator.v4.18.0-202506020833
   # - chart: compliance-operator
   #   targetRevision: 1.0.42
   #   namespace: openshift-compliance
