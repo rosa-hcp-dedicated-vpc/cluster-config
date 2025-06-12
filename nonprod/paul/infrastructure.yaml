@@ -29,21 +29,13 @@ infrastructure:
       helper-operator:
         subscription:
           csv: aws-efs-csi-driver-operator.v4.18.0-202506020833
-  # - chart: compliance-operator
-  #   targetRevision: 1.0.42
-  #   namespace: openshift-compliance
-  #   values:
-  #     csv: compliance-operator.v1.6.1
-  # - chart: overprovisioning
-  #   targetRevision: 0.0.4
-  #   namespace: overprovisioning
-  #   values:
-  # - chart: cluster-monitoring
-  #   targetRevision: 0.0.5
-  #   namespace: cluster-monitoring
-  #   values:
-  #     clustername: rosa-test-1
-  #     region: ap-southeast-4
-  #     nonprod_topic_arn: arn:aws:sns:ap-southeast-4:<account>:sre_alert_forwarder_topic
-  #     api_url: https://sns.ap-southeast-4.amazonaws.com
-  #     environment: nonprod
+  - chart: compliance-operator
+    targetRevision: 1.0.42
+    namespace: openshift-compliance
+    values:
+      csv: compliance-operator.v1.6.1
+  - chart: overprovisioning
+    targetRevision: 0.0.4
+    namespace: overprovisioning
+    values:
+
