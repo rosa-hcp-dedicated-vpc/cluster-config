@@ -21,7 +21,7 @@ defaults:
 #################################################################
 infrastructure:
   - chart: cluster-efs
-    targetRevision: 0.2.5
+    targetRevision: 0.2.6
     namespace: openshift-cluster-csi-drivers
     values:
       roleArn: arn:aws:iam::808082629126:role/rosa-test-1-rosa-efs-csi-role-iam
@@ -30,25 +30,21 @@ infrastructure:
         subscription:
           csv: aws-efs-csi-driver-operator.v4.18.0-202506020833
   - chart: compliance-operator
-    targetRevision: 1.0.42
+    targetRevision: 1.0.43
     namespace: openshift-compliance
     values:
       helper-operator:
         subscription:
           csv: compliance-operator.v1.6.1
   - chart: overprovisioning
-    targetRevision: 0.0.5
+    targetRevision: 0.0.6
     namespace: overprovisioning
     values:
   - chart: cluster-logging
-    targetRevision: 0.2.6
+    targetRevision: 0.2.7
     namespace: openshift-logging
     values:
       role_arn: arn:aws:iam::808082629126:role/paul-rosa-cloudwatch-role-iam
       region: ap-southeast-2
       helper-operator:
-        CSV:
-        operators:
-          cluster-logging:
-            subscription:
-              csv: cluster-logging.v6.2.3
+        startingCSV: cluster-logging.v6.2.3
