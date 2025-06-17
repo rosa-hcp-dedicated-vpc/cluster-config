@@ -45,5 +45,7 @@ infrastructure:
     namespace: openshift-logging
     values:
       helper-operator:
-        subscription:
-          csv: cluster-logging.v6.2.3
+        operators:
+          cluster-logging:
+            subscription:
+              csv: cluster-logging.v6.2.3
