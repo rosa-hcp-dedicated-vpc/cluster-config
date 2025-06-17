@@ -41,10 +41,13 @@ infrastructure:
     namespace: overprovisioning
     values:
   - chart: cluster-logging
-    targetRevision: 0.2.3
+    targetRevision: 0.2.5
     namespace: openshift-logging
     values:
+      role_arn: arn:aws:iam::808082629126:role/paul-rosa-cloudwatch-role-iam
+      region: ap-southeast-2
       helper-operator:
+        CSV:
         operators:
           cluster-logging:
             subscription:
