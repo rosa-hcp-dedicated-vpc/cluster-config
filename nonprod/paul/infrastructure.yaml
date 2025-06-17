@@ -41,7 +41,7 @@ infrastructure:
     namespace: overprovisioning
     values:
   - chart: cluster-logging
-    targetRevision: 0.1.9
+    targetRevision: 0.2.0
     namespace: openshift-logging
     values:
       helper-operator:
