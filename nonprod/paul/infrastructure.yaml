@@ -33,9 +33,17 @@ infrastructure:
     targetRevision: 1.0.42
     namespace: openshift-compliance
     values:
-      csv: compliance-operator.v1.6.1
+      helper-operator:
+        subscription:
+          csv: compliance-operator.v1.6.1
   - chart: overprovisioning
-    targetRevision: 0.0.5
+    targetRevision: 0.0.6
     namespace: overprovisioning
     values:
-
+  - chart: cluster-logging
+    targetRevision: 0.1.8
+    namespace: openshift-logging
+    values:
+      helper-operator:
+        subscription:
+          csv: cluster-logging.v6.2.3
