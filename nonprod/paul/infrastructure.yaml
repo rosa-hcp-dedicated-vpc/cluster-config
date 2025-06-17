@@ -27,15 +27,13 @@ infrastructure:
       roleArn: arn:aws:iam::808082629126:role/rosa-test-1-rosa-efs-csi-role-iam
       fileSystemId: fs-0dd464e83e33f98a3
       helper-operator:
-        subscription:
-          csv: aws-efs-csi-driver-operator.v4.18.0-202506020833
+        startingCSV: aws-efs-csi-driver-operator.v4.18.0-202506020833
   - chart: compliance-operator
     targetRevision: 1.0.43
     namespace: openshift-compliance
     values:
       helper-operator:
-        subscription:
-          csv: compliance-operator.v1.6.1
+        startingCSV: compliance-operator.v1.6.1
   - chart: overprovisioning
     targetRevision: 0.0.6
     namespace: overprovisioning
