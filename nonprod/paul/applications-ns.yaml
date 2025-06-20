@@ -10,7 +10,7 @@ defaults:
   finalizers: resources-finalizer.argocd.argoproj.io
   gitopsNamespace: openshift-gitops
   # Helm defaults
-  helmRepoUrl: ttps://rosa-hcp-dedicated-vpc.github.io/helm-repository
+  helmRepoUrl: https://rosa-hcp-dedicated-vpc.github.io/helm-repository
   path: charts
   chart: gitops-namespaces-payload
   targetRevision: 0.2.0
