@@ -23,7 +23,8 @@ defaults:
 ################################################################# 
 applications:
   - name: payments
-    appNumber: "1234"
+    apmnum: "1234"
+    appserviceNumber: "5678"
     gitopsCreate: true
     gitRepoUrl: 'https://github.com/rosa-hcp-dedicated-vpc/cluster-config.git'
     gitPath: nonprod/paul/namespaces/payments-1234.yaml
@@ -33,7 +34,8 @@ applications:
       - 'https://rosa-hcp-dedicated-vpc.github.io/helm-repository'
       - 'https://github.com/rosa-hcp-dedicated-vpc/cluster-config.git'
   - name: accounting
-    appNumber: "5678"
+    apmnum: "abcd"
+    appserviceNumber: "efgh"
     gitopsCreate: false
     gitRepoUrl: 'https://github.com/rosa-hcp-dedicated-vpc/cluster-config.git'
     gitPath: nonprod/paul/namespaces/accounting-5678.yaml
