@@ -18,6 +18,8 @@ defaults:
   targetRevision: 1.4.8
   # ecr role
   ecrUpdateRole: arn:aws:iam:::role/rosa-ecr-access-role
+  primary-owner: pafoster@redhat.com
+  zone: test
   # Must set annoataions even if you do not have anything undermneath it. These apply to the project
   annotations:
     comments: "acounting teams namespaces dev only"

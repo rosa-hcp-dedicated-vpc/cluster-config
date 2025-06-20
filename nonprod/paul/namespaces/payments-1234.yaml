@@ -19,6 +19,8 @@ defaults:
   # ecr role
   ecrUpdateRole: arn:aws:iam:::role/poc-rosa-ecr-access-role
   # Must set annoataions even if you do not have anything undermneath it. These apply to the project
+  primary-owner: pafoster@redhat.com
+  zone: test
   annotations:
     comments: "payments teams namespaces dev only"
     description: "paymernts namespaces"
