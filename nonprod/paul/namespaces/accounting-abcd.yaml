@@ -28,7 +28,8 @@ defaults:
   # Must set labels even if you do not have anything undermneath it. These apply to the project
   labels:
     domain: "Infrastruture_and_Cloud"
-    primary_owner: "Paul.foster@redhat.com"
+    primary-owner: pafoster@redhat.com
+    zone: test
     quota: "resourcequota"
     region: "NoNodeSelector"
     ingress: customer-ingress
