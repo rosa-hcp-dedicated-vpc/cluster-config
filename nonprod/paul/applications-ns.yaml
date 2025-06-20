@@ -10,7 +10,7 @@ defaults:
   finalizers: resources-finalizer.argocd.argoproj.io
   gitopsNamespace: openshift-gitops
   # Helm defaults
-  helmRepoUrl: https://pages.github.service.anz/ics/helm-charts
+  helmRepoUrl: ttps://rosa-hcp-dedicated-vpc.github.io/helm-repository
   path: charts
   chart: gitops-namespaces-payload
   targetRevision: 0.1.8
@@ -25,21 +25,21 @@ applications:
   - name: payments
     appNumber: "1234"
     gitopsCreate: true
-    gitRepoUrl: https://github/cluster-config.git
-    gitPath: nonprod/namespaces/payments-1234.yaml
+    gitRepoUrl: 'https://github.com/rosa-hcp-dedicated-vpc/cluster-config.git'
+    gitPath: nonprod/paul/namespaces/payments-1234.yaml
     appProject:
       adGroup: PFAUTHAD
       repos:
-      - 'https://pages.github/helm-charts'
-      - 'https://github/cluster-configs.git'
+      - 'https://rosa-hcp-dedicated-vpc.github.io/helm-repository'
+      - 'https://github.com/rosa-hcp-dedicated-vpc/cluster-config.git'
   - name: accounting
     appNumber: "5678"
-    gitopsCreate: true
-    gitRepoUrl: https://github/cluster-config.git
-    gitPath: nonprod/namespaces/accounting-5678.yaml
+    gitopsCreate: false
+    gitRepoUrl: 'https://github.com/rosa-hcp-dedicated-vpc/cluster-config.git'
+    gitPath: nonprod/paul/namespaces/accounting-5678.yaml
     appProject:
       adGroup: PFAUTHAD
       repos:
-      - 'https://pages.github/helm-charts'
-      - 'https://github/cluster-configs.git'
+      - 'https://rosa-hcp-dedicated-vpc.github.io/helm-repository'
+      - 'https://github.com/rosa-hcp-dedicated-vpc/cluster-config.git'
     
