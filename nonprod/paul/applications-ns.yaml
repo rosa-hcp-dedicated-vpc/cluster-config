@@ -13,7 +13,7 @@ defaults:
   helmRepoUrl: ttps://rosa-hcp-dedicated-vpc.github.io/helm-repository
   path: charts
   chart: gitops-namespaces-payload
-  targetRevision: 0.1.9
+  targetRevision: 0.2.0
   # Vault plugin defaults.
   plugin: false
   AWS_REGION: "ap-southeast-2"
