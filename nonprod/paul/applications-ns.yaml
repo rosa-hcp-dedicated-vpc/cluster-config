@@ -13,7 +13,7 @@ defaults:
   helmRepoUrl: ttps://rosa-hcp-dedicated-vpc.github.io/helm-repository
   path: charts
   chart: gitops-namespaces-payload
-  targetRevision: 0.1.8
+  targetRevision: 0.1.9
   # Vault plugin defaults.
   plugin: false
   AWS_REGION: "ap-southeast-2"
@@ -38,7 +38,7 @@ applications:
     appserviceNumber: "efgh"
     gitopsCreate: false
     gitRepoUrl: 'https://github.com/rosa-hcp-dedicated-vpc/cluster-config.git'
-    gitPath: nonprod/paul/namespaces/accounting-5678.yaml
+    gitPath: nonprod/paul/namespaces/accounting-abcd.yaml
     appProject:
       adGroup: PFAUTHAD
       repos:
