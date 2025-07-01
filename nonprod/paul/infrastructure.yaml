@@ -25,7 +25,7 @@ infrastructure:
     namespace: openshift-cluster-csi-drivers
     values:
       roleArn: arn:aws:iam::808082629126:role/paul-rosa-efs-csi-role-iam
-      fileSystemId: fs-041e1a4eaae9b3d31
+      fileSystemId: fs-0718beb50be783f1e
       helper-operator:
         startingCSV: aws-efs-csi-driver-operator.v4.19.0-202506020913
   - chart: compliance-operator
