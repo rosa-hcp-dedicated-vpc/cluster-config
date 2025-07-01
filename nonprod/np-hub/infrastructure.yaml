@@ -1,0 +1,49 @@
+#################################################################
+# teamName used for argocd applicaiton names and namespace names.
+#################################################################
+teamName: cluster-config
+#################################################################
+# default Values for gitops-payload helm chart
+#################################################################
+defaults:
+  # argcod application defaults
+  finalizers: resources-finalizer.argocd.argoproj.io
+  gitopsNamespace: openshift-gitops
+  # Helm defaults
+  helmRepoUrl: https://rosa-hcp-dedicated-vpc.github.io/helm-repository/
+  path: charts
+  # Vault plugin defaults.
+  plugin: true
+  AWS_REGION: "ap-southeast-2"
+  AVP_TYPE: "awssecretsmanager"
+#################################################################
+# INFRASTRUCTURE Charts to be deployed.
+#################################################################
+infrastructure:
+  - chart: cluster-efs
+    targetRevision: 0.2.7
+    namespace: openshift-cluster-csi-drivers
+    values:
+      roleArn: arn:aws:iam::808082629126:role/np-hub-rosa-efs-csi-role-iam
+      fileSystemId: fs-0718beb50be783f1e
+      helper-operator:
+        startingCSV: aws-efs-csi-driver-operator.v4.19.0-202506020913
+  - chart: compliance-operator
+    targetRevision: 1.0.43
+    namespace: openshift-compliance
+    values:
+      helper-operator:
+        startingCSV: compliance-operator.v1.6.1
+  - chart: overprovisioning
+    targetRevision: 0.0.5
+    namespace: overprovisioning
+    values:
+  - chart: cluster-logging
+    targetRevision: 0.2.8
+    namespace: openshift-logging
+    values:
+      roleArn: arn:aws:iam::808082629126:role/np-hub-rosa-cloudwatch-role-iam
+      region: ap-southeast-2
+      helper-operator:
+        startingCSV: cluster-logging.v6.2.3
+        

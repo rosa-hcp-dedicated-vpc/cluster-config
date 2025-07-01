@@ -24,7 +24,7 @@ infrastructure:
     targetRevision: 0.2.7
     namespace: openshift-cluster-csi-drivers
     values:
-      roleArn: arn:aws:iam::808082629126:role/paul-rosa-efs-csi-role-iam
+      roleArn: arn:aws:iam::808082629126:role/np-os-ai-rosa-efs-csi-role-iam
       fileSystemId: fs-0718beb50be783f1e
       helper-operator:
         startingCSV: aws-efs-csi-driver-operator.v4.19.0-202506020913
@@ -42,7 +42,7 @@ infrastructure:
     targetRevision: 0.2.8
     namespace: openshift-logging
     values:
-      roleArn: arn:aws:iam::808082629126:role/paul-rosa-cloudwatch-role-iam
+      roleArn: arn:aws:iam::808082629126:role/np-os-ai-rosa-cloudwatch-role-iam
       region: ap-southeast-2
       helper-operator:
         startingCSV: cluster-logging.v6.2.3
