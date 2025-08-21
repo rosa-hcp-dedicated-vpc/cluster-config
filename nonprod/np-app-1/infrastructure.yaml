@@ -29,7 +29,7 @@ infrastructure:
       helper-operator:
         startingCSV: aws-efs-csi-driver-operator.v4.19.0-202506020913
   - chart: compliance-operator
-    targetRevision: 1.0.45
+    targetRevision: 1.0.46
     namespace: openshift-compliance
     values:
       helper-operator:
@@ -39,7 +39,7 @@ infrastructure:
     namespace: overprovisioning
     values:
   - chart: cluster-logging
-    targetRevision: 0.3.0
+    targetRevision: 0.3.1
     namespace: openshift-logging
     values:
       roleArn: arn:aws:iam::808082629126:role/np-app-1-rosa-cloudwatch-role-iam
