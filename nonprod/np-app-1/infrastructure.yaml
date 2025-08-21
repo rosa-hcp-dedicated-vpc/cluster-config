@@ -47,7 +47,7 @@ infrastructure:
       helper-operator:
         startingCSV: cluster-logging.v6.2.3
   - chart: rhods-operator
-    targetRevision: 1.0.1
+    targetRevision: 1.0.2
     namespace: redhat-ods-operator
     values:
       helper-operator:
