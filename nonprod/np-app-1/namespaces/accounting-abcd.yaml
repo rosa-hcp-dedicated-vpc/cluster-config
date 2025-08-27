@@ -18,7 +18,7 @@ defaults:
   targetRevision: 1.5.0
   # ecr role
   ecrUpdateRole: arn:aws:iam:::role/rosa-ecr-access-role
-  primary-owner: "pafoster@redhat.com"
+  primary_owner: "pafoster@redhat.com"
   zone: test
   # Must set annoataions even if you do not have anything undermneath it. These apply to the project
   annotations:
@@ -28,7 +28,7 @@ defaults:
   # Must set labels even if you do not have anything undermneath it. These apply to the project
   labels:
     domain: "Infrastruture_and_Cloud"
-    primary-owner: "pafoster@redhat.com"
+    primary_owner: "pafoster@redhat.com"
     zone: test
     quota: "resourcequota"
     region: "NoNodeSelector"
