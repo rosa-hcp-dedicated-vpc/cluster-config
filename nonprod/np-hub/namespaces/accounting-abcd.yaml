@@ -15,7 +15,7 @@ defaults:
   AVP_TYPE: "awssecretsmanager"
   # namespaces chart defaults
   chart: namespaces
-  targetRevision: 1.5.0
+  targetRevision: 1.5.1
   # ecr role
   ecrUpdateRole: arn:aws:iam:::role/rosa-ecr-access-role
   primary-owner: pafoster@redhat.com
