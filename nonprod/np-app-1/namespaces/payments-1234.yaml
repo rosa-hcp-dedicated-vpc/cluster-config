@@ -16,7 +16,7 @@ defaults:
   # namespaces chart defaults
   chart: namespaces
   targetRevision: 1.5.0
-  primary_owner: "pafoster@redhat.com"
+  primary_owner: "pafosterredhat.com"
   # ecr role
   ecrUpdateRole: arn:aws:iam:::role/poc-rosa-ecr-access-role
   # Must set annoataions even if you do not have anything undermneath it. These apply to the project
@@ -27,7 +27,7 @@ defaults:
   # Must set labels even if you do not have anything undermneath it. These apply to the project
   labels:
     domain: "Infrastruture_and_Cloud"
-    primary_owner: "pafoster@redhat.com"
+    primary_owner: "pafosterredhat.com"
     zone: test
     quota: "resourcequota"
     region: "NoNodeSelector"
