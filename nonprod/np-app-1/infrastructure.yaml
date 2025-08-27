@@ -35,7 +35,7 @@ infrastructure:
       helper-operator:
         startingCSV: compliance-operator.v1.6.1
   - chart: overprovisioning
-    targetRevision: 0.0.6
+    targetRevision: 0.0.7
     namespace: overprovisioning
     values:
   - chart: cluster-logging
