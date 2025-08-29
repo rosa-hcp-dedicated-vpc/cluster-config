@@ -39,7 +39,7 @@ infrastructure:
     namespace: overprovisioning
     values:
   - chart: cluster-logging
-    targetRevision: 0.4.0
+    targetRevision: 0.4.3
     namespace: openshift-logging
     values:
       roleArn: arn:aws:iam::808082629126:role/np-app-1-rosa-cloudwatch-role-iam
