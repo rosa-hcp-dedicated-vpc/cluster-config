@@ -47,9 +47,26 @@ infrastructure:
       helper-operator:
         startingCSV: cluster-logging.v6.2.3
   - chart: rhods-operator
-    targetRevision: 1.0.4
+    targetRevision: 1.1.2
     namespace: redhat-ods-operator
     values:
       helper-operator:
         startingCSV: rhods-operator.2.22.1
+      serverless-operator:
+        enabled: true
+        helper-operator:
+          startingCSV: serverless-operator.v1.34.1
+      servicemesh-operator:
+        enabled: true
+        helper-operator:
+          startingCSV: servicemeshoperator.v2.6.1
+        jaeger-operator:
+          enabled: true
+          helper-operator:
+            startingCSV: jaeger-operator.v1.57.0
+        kiali-operator:
+          enabled: true
+          helper-operator:
+            startingCSV: kiali-operator.v1.73.7
+
         
