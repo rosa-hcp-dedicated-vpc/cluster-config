@@ -53,19 +53,15 @@ infrastructure:
       helper-operator:
         startingCSV: rhods-operator.2.22.1
       serverless-operator:
-        enabled: true
         helper-operator:
           startingCSV: serverless-operator.v1.34.1
       servicemesh-operator:
-        enabled: true
         helper-operator:
           startingCSV: servicemeshoperator.v2.6.1
         jaeger-operator:
-          enabled: true
           helper-operator:
             startingCSV: jaeger-operator.v1.57.0
         kiali-operator:
-          enabled: true
           helper-operator:
             startingCSV: kiali-operator.v1.73.7
 
