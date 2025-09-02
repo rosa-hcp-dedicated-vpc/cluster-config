@@ -60,11 +60,11 @@ infrastructure:
         enabled: true
         startingCSV: servicemeshoperator.v2.6.9
   - chart: serverless-operator
-    targetRevision: 0.1.1
+    targetRevision: 0.1.4
     namespace: openshift-serverless
     values:
       helper-operator:
-        startingCSV: serverless-operator.v1.34.1
+        startingCSV: serverless-operator.v1.36.0
   - chart: jaeger-operator
     targetRevision: 0.1.1
     namespace: openshift-distributed-tracing
