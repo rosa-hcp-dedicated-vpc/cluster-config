@@ -52,17 +52,27 @@ infrastructure:
     values:
       helper-operator:
         startingCSV: rhods-operator.2.22.1
-      serverless-operator:
-        helper-operator:
-          startingCSV: serverless-operator.v1.34.1
-      servicemesh-operator:
-        helper-operator:
-          startingCSV: servicemeshoperator.v2.6.1
-        jaeger-operator:
-          helper-operator:
-            startingCSV: jaeger-operator.v1.57.0
-        kiali-operator:
-          helper-operator:
-            startingCSV: kiali-operator.v1.73.7
-
-        
+  - chart: servicemesh-operator
+    targetRevision: 0.2.0
+    namespace: openshift-operators
+    values:
+      helper-operator:
+        startingCSV: servicemeshoperator.v2.6.1
+  - chart: serverless-operator
+    targetRevision: 0.1.1
+    namespace: openshift-serverless
+    values:
+      helper-operator:
+        startingCSV: serverless-operator.v1.34.1
+  - chart: jaeger-operator
+    targetRevision: 0.1.1
+    namespace: openshift-distributed-tracing
+    values:
+      helper-operator:
+        startingCSV: jaeger-operator.v1.57.0
+  - chart: kiali-operator
+    targetRevision: 0.1.1
+    namespace: openshift-operators
+    values:
+      helper-operator:
+        startingCSV: kiali-operator.v1.73.7
