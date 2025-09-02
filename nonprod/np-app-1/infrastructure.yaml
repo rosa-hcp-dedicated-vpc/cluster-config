@@ -53,10 +53,11 @@ infrastructure:
       helper-operator:
         startingCSV: rhods-operator.2.22.1
   - chart: servicemesh-operator
-    targetRevision: 0.2.6
+    targetRevision: 0.2.7
     namespace: openshift-operators
     values:
       helper-operator:
+        enabled: true
         startingCSV: servicemeshoperator.v2.6.1
   - chart: serverless-operator
     targetRevision: 0.1.1
