@@ -65,15 +65,10 @@ infrastructure:
     values:
       helper-operator:
         startingCSV: serverless-operator.v1.36.0
-  - chart: jaeger-operator
-    targetRevision: 0.1.1
-    namespace: openshift-distributed-tracing
-    values:
-      helper-operator:
-        startingCSV: jaeger-operator.v1.57.0
+
   - chart: kiali-operator
-    targetRevision: 0.1.1
+    targetRevision: 0.1.4
     namespace: openshift-operators
     values:
       helper-operator:
-        startingCSV: kiali-operator.v1.73.7
+        startingCSV: kiali-operator.v2.11.2
