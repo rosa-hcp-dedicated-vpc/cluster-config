@@ -65,7 +65,6 @@ infrastructure:
     values:
       helper-operator:
         startingCSV: serverless-operator.v1.36.0
-
   - chart: kiali-operator
     targetRevision: 0.1.4
     namespace: openshift-operators
