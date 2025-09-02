@@ -72,7 +72,7 @@ infrastructure:
       helper-operator:
         startingCSV: kiali-operator.v2.11.2
   - chart: lightspeed-operator
-    targetRevision: 0.1.1
+    targetRevision: 0.1.2
     namespace: openshift-lightspeed
     values:
       startingCSV: lightspeed-operator.v1.0.3
