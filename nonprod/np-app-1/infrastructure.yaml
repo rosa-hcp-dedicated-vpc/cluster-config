@@ -76,4 +76,9 @@ infrastructure:
     namespace: openshift-lightspeed
     values:
       startingCSV: lightspeed-operator.v1.0.3
+  - chart: nvidia-gpu-operator
+    targetRevision: 0.1.0
+    namespace: nvidia-gpu-operator
+    values:
+      startingCSV: gpu-operator-certified.v25.3.2
       
