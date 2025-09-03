@@ -82,7 +82,7 @@ infrastructure:
     values:
       startingCSV: nfd.v4.19.0-202506020913
   - chart: nvidia-gpu-operator
-    targetRevision: 0.1.6
+    targetRevision: 0.1.7
     namespace: nvidia-gpu-operator
     values:
       startingCSV: gpu-operator-certified.v25.3.2
