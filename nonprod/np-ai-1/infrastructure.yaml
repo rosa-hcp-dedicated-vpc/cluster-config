@@ -24,7 +24,7 @@ infrastructure:
     targetRevision: 0.3.0
     namespace: openshift-cluster-csi-drivers
     values:
-      roleArn: arn:aws:iam::808082629126:role/np-app-1-rosa-efs-csi-role-iam
+      roleArn: arn:aws:iam::808082629126:role/np-ai-1-rosa-efs-csi-role-iam
       fileSystemId: fs-0718beb50be783f1e
       helper-operator:
         startingCSV: aws-efs-csi-driver-operator.v4.19.0-202506020913
@@ -87,6 +87,6 @@ infrastructure:
     values:
       startingCSV: gpu-operator-certified.v25.3.2
   - chart: model-mistral
-    targetRevision: 0.1.5
+    targetRevision: 0.1.6
     namespace: mistral-ai
     values:
