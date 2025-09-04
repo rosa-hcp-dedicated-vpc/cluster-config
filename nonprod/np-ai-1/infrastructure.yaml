@@ -60,7 +60,7 @@ infrastructure:
         enabled: true
         startingCSV: servicemeshoperator.v2.6.9
   - chart: serverless-operator
-    targetRevision: 0.1.7
+    targetRevision: 0.1.9
     namespace: openshift-serverless
     values:
       helper-operator:
