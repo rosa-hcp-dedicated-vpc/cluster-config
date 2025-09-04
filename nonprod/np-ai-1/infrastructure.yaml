@@ -21,7 +21,7 @@ defaults:
 #################################################################
 infrastructure:
   - chart: cluster-efs
-    targetRevision: 0.4.1
+    targetRevision: 0.4.2
     namespace: openshift-cluster-csi-drivers
     values:
       roleArn: arn:aws:iam::808082629126:role/np-ai-1-rosa-efs-csi-role-iam
@@ -87,7 +87,7 @@ infrastructure:
     values:
       startingCSV: gpu-operator-certified.v25.3.2
   - chart: model-mistral
-    targetRevision: 0.1.8
+    targetRevision: 0.1.9
     namespace: mistral-ai
     values:
 
