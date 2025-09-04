@@ -21,7 +21,7 @@ defaults:
 #################################################################
 infrastructure:
   - chart: cluster-efs
-    targetRevision: 0.3.2
+    targetRevision: 0.4.0
     namespace: openshift-cluster-csi-drivers
     values:
       roleArn: arn:aws:iam::808082629126:role/np-app-1-rosa-efs-csi-role-iam
@@ -29,7 +29,7 @@ infrastructure:
       helper-operator:
         startingCSV: aws-efs-csi-driver-operator.v4.19.0-202506020913
   - chart: compliance-operator
-    targetRevision: 1.0.49
+    targetRevision: 1.2.0
     namespace: openshift-compliance
     values:
       helper-operator:
@@ -39,7 +39,7 @@ infrastructure:
     namespace: overprovisioning
     values:
   - chart: cluster-logging
-    targetRevision: 0.4.10
+    targetRevision: 0.5.0
     namespace: openshift-logging
     values:
       roleArn: arn:aws:iam::808082629126:role/np-app-1-rosa-cloudwatch-role-iam
@@ -47,20 +47,20 @@ infrastructure:
       helper-operator:
         startingCSV: cluster-logging.v6.2.3
   - chart: rhods-operator
-    targetRevision: 1.1.7
+    targetRevision: 1.2.0
     namespace: redhat-ods-operator
     values:
       helper-operator:
         startingCSV: rhods-operator.2.22.1
   - chart: servicemesh-operator
-    targetRevision: 0.3.9
+    targetRevision: 0.4.0
     namespace: openshift-operators
     values:
       helper-operator:
         enabled: true
         startingCSV: servicemeshoperator.v2.6.9
   - chart: serverless-operator
-    targetRevision: 0.1.10
+    targetRevision: 0.2.0
     namespace: openshift-serverless
     values:
       helper-operator:
@@ -72,21 +72,21 @@ infrastructure:
       helper-operator:
         startingCSV: kiali-operator.v2.11.2
   - chart: lightspeed-operator
-    targetRevision: 0.1.9
+    targetRevision: 0.2.0
     namespace: openshift-lightspeed
     values:
       startingCSV: lightspeed-operator.v1.0.3
   - chart: nfd-operator
-    targetRevision: 0.1.4
+    targetRevision: 0.2.0
     namespace: openshift-nfd
     values:
       startingCSV: nfd.v4.19.0-202506020913
   - chart: nvidia-gpu-operator
-    targetRevision: 0.1.10
+    targetRevision: 0.2.0
     namespace: nvidia-gpu-operator
     values:
       startingCSV: gpu-operator-certified.v25.3.2
   - chart: model-mistral
-    targetRevision: 0.1.7
+    targetRevision: 0.1.6
     namespace: mistral-ai
     values:
