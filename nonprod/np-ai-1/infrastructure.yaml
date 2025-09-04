@@ -33,7 +33,7 @@ infrastructure:
     namespace: openshift-compliance
     values:
       helper-operator:
-        startingCSV: compliance-operator.v1.6.1
+        startingCSV: compliance-operator.v1.7.1
   - chart: overprovisioning
     targetRevision: 0.0.7
     namespace: overprovisioning
