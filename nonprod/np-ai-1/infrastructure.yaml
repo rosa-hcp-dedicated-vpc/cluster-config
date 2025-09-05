@@ -92,7 +92,7 @@ infrastructure:
     namespace: mistral-ai
     values:
   - chart: milvus
-    targetRevision: 5.0.3
+    targetRevision: 5.0.5
     namespace: milvus
     values:
 
