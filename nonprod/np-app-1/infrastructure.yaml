@@ -60,7 +60,7 @@ infrastructure:
         enabled: true
         startingCSV: servicemeshoperator.v2.6.9
   - chart: serverless-operator
-    targetRevision: 0.2.10
+    targetRevision: 0.2.9
     namespace: openshift-serverless
     values:
       helper-operator:
@@ -77,12 +77,12 @@ infrastructure:
     values:
       startingCSV: lightspeed-operator.v1.0.4
   - chart: nfd-operator
-    targetRevision: 0.2.10
+    targetRevision: 0.2.9
     namespace: openshift-nfd
     values:
       startingCSV: nfd.v4.19.0-202506020913
   - chart: nvidia-gpu-operator
-    targetRevision: 0.2.10
+    targetRevision: 0.2.9
     namespace: nvidia-gpu-operator
     values:
       startingCSV: gpu-operator-certified.v25.3.2
