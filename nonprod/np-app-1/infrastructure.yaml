@@ -47,7 +47,7 @@ infrastructure:
       helper-operator:
         startingCSV: cluster-logging.v6.2.3
   - chart: rhods-operator
-    targetRevision: 1.2.10
+    targetRevision: 1.2.12
     namespace: redhat-ods-operator
     values:
       helper-operator:
@@ -87,6 +87,6 @@ infrastructure:
     values:
       startingCSV: gpu-operator-certified.v25.3.2
   - chart: model-mistral
-    targetRevision: 0.3.7
+    targetRevision: 0.3.9
     namespace: mistral-ai
     values:
