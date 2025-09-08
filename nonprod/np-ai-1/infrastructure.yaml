@@ -78,17 +78,17 @@ infrastructure:
       startingCSV: lightspeed-operator.v1.0.4
       modelURL: "https://mistral-small-24b-instruct-quantized-mistral-ai.apps.rosa.np-ai-1.ttrc.p3.openshiftapps.com/v1"
   - chart: nfd-operator
-    targetRevision: 0.2.9
+    targetRevision: 0.3.3
     namespace: openshift-nfd
     values:
       startingCSV: nfd.v4.19.0-202506020913
   - chart: nvidia-gpu-operator
-    targetRevision: 0.2.9
+    targetRevision: 0.2.10
     namespace: nvidia-gpu-operator
     values:
       startingCSV: gpu-operator-certified.v25.3.2
   - chart: model-mistral
-    targetRevision: 0.2.7
+    targetRevision: 0.3.6
     namespace: mistral-ai
     values:
   - chart: milvus

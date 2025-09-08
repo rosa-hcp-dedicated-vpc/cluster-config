@@ -72,21 +72,21 @@ infrastructure:
       helper-operator:
         startingCSV: kiali-operator.v2.11.2
   - chart: lightspeed-operator
-    targetRevision: 0.3.1
+    targetRevision: 0.3.4
     namespace: openshift-lightspeed
     values:
       startingCSV: lightspeed-operator.v1.0.4
   - chart: nfd-operator
-    targetRevision: 0.2.9
+    targetRevision: 0.3.3
     namespace: openshift-nfd
     values:
       startingCSV: nfd.v4.19.0-202506020913
   - chart: nvidia-gpu-operator
-    targetRevision: 0.2.9
+    targetRevision: 0.2.10
     namespace: nvidia-gpu-operator
     values:
       startingCSV: gpu-operator-certified.v25.3.2
   - chart: model-mistral
-    targetRevision: 0.2.5
+    targetRevision: 0.3.6
     namespace: mistral-ai
     values:
