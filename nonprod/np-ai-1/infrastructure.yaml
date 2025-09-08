@@ -88,7 +88,7 @@ infrastructure:
     values:
       startingCSV: gpu-operator-certified.v25.3.2
   - chart: model-mistral
-    targetRevision: 0.3.12
+    targetRevision: 0.3.13
     namespace: mistral-ai
     values:
   - chart: milvus
