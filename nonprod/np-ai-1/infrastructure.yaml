@@ -95,4 +95,3 @@ infrastructure:
     targetRevision: 5.0.8
     namespace: milvus
     values:
-
