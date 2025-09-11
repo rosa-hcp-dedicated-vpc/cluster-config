@@ -27,7 +27,7 @@ infrastructure:
       roleArn: arn:aws:iam::808082629126:role/np-ai-1-rosa-efs-csi-role-iam
       fileSystemId: fs-0718beb50be783f1e
       helper-operator:
-        startingCSV: aws-efs-csi-driver-operator.v4.19.0-202508280357
+        startingCSV: aws-efs-csi-driver-operator.v4.19.0-202509110000
   - chart: compliance-operator
     targetRevision: 1.2.10
     namespace: openshift-compliance
@@ -58,7 +58,7 @@ infrastructure:
     values:
       helper-operator:
         enabled: true
-        startingCSV: servicemeshoperator.v2.6.9
+        startingCSV: servicemeshoperator.v2.6.10
   - chart: serverless-operator
     targetRevision: 0.2.10
     namespace: openshift-serverless
@@ -86,7 +86,7 @@ infrastructure:
     targetRevision: 0.2.13
     namespace: nvidia-gpu-operator
     values:
-      startingCSV: gpu-operator-certified.v25.3.2
+      startingCSV: gpu-operator-certified.v25.4.0
   - chart: model-mistral
     targetRevision: 0.3.15
     namespace: mistral-ai
