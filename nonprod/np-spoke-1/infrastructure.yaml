@@ -27,7 +27,7 @@ infrastructure:
       roleArn: arn:aws:iam::808082629126:role/np-app-1-rosa-efs-csi-role-iam
       fileSystemId: fs-0718beb50be783f1e
       helper-operator:
-        startingCSV: aws-efs-csi-driver-operator.v4.19.0-202509110000
+        startingCSV: aws-efs-csi-driver-operator.v4.17.0-202503101104
   - chart: compliance-operator
     targetRevision: 1.2.10
     namespace: openshift-compliance
