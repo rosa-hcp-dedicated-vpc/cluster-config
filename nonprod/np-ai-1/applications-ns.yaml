@@ -27,7 +27,7 @@ applications:
     appserviceNumber: "5678"
     gitopsCreate: true
     gitRepoUrl: 'https://github.com/rosa-hcp-dedicated-vpc/cluster-config.git'
-    gitPath: nonprod/np-app-1/namespaces/payments-1234.yaml
+    gitPath: nonprod/np-ai-1/namespaces/payments-1234.yaml
     appProject:
       adGroup: PFAUTHAD
       repos:
@@ -38,7 +38,7 @@ applications:
     appserviceNumber: "efgh"
     gitopsCreate: false
     gitRepoUrl: 'https://github.com/rosa-hcp-dedicated-vpc/cluster-config.git'
-    gitPath: nonprod/np-app-1/namespaces/accounting-abcd.yaml
+    gitPath: nonprod/np-ai-1/namespaces/accounting-abcd.yaml
     appProject:
       adGroup: PFAUTHAD
       repos:
