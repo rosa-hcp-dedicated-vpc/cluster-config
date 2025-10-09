@@ -86,7 +86,7 @@ infrastructure:
     targetRevision: 0.2.13
     namespace: nvidia-gpu-operator
     values:
-      startingCSV: gpu-operator-certified.v25.3.2
+      startingCSV: gpu-operator-certified.v25.3.4
   - chart: model-mistral
     targetRevision: 0.3.15
     namespace: mistral-ai
