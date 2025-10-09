@@ -58,7 +58,7 @@ infrastructure:
     values:
       helper-operator:
         enabled: true
-        startingCSV: servicemeshoperator.v2.6.9
+        startingCSV: servicemeshoperator.v2.6.11
   - chart: serverless-operator
     targetRevision: 0.2.10
     namespace: openshift-serverless
@@ -70,7 +70,7 @@ infrastructure:
     namespace: openshift-operators
     values:
       helper-operator:
-        startingCSV: kiali-operator.v2.11.2
+        startingCSV: kiali-operator.v2.11.3
   - chart: lightspeed-operator
     targetRevision: 0.3.5
     namespace: openshift-lightspeed
