@@ -60,6 +60,8 @@ infrastructure:
     annotations:
       argocd.argoproj.io/compare-options: IgnoreExtraneous
     values:
+      global:
+        host: "cluster-config-backstage-developer-hub-backstage.apps.rosa.np-hub.pcx9.p3.openshiftapps.com"
   # - chart: rhacs-operator
   #   targetRevision: 0.1.8
   #   namespace: rhacs-operator
