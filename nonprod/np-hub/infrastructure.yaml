@@ -47,7 +47,7 @@ infrastructure:
       helper-operator:
         startingCSV: cluster-logging.v6.2.3
   - chart: advanced-cluster-management
-    targetRevision: 0.2.12
+    targetRevision: 0.2.13
     namespace: open-cluster-management
     values:
       helper-operator:
