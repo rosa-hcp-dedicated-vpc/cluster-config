@@ -55,7 +55,7 @@ infrastructure:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.13.4
   - chart: backstage
-    targetRevision: 4.5.13
+    targetRevision: 4.5.14
     namespace: backstage
     annotations:
       argocd.argoproj.io/compare-options: IgnoreExtraneous
