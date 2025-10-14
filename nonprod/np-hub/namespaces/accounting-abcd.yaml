@@ -18,7 +18,7 @@ defaults:
   targetRevision: 1.5.2
   # ecr role
   ecrUpdateRole: arn:aws:iam:::role/rosa-ecr-access-role
-  primary-owner: "pafoster@redhat.com"
+  primary-owner: "pafosterredhat.com"
   zone: test
   # Must set annoataions even if you do not have anything undermneath it. These apply to the project
   annotations:
