@@ -54,6 +54,18 @@ infrastructure:
     values:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.13.4
+  - chart: serverless-operator
+    targetRevision: 0.2.10
+    namespace: openshift-serverless
+    values:
+      helper-operator:
+        startingCSV: serverless-operator.v1.36.1
+  - chart: orchestrator-operator
+    targetRevision: 1.0.0
+    namespace: openshift-operators
+    values:
+      helper-operator:
+        startingCSV: orchestrator-operator.v1.6.1
   # - chart: backstage
   #   targetRevision: 4.5.14
   #   namespace: backstage
