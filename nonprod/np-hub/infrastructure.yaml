@@ -61,7 +61,7 @@ infrastructure:
       helper-operator:
         startingCSV: serverless-operator.v1.36.1
   - chart: orchestrator-operator
-    targetRevision: 1.0.1
+    targetRevision: 1.0.2
     namespace: openshift-operators
     values:
       helper-operator:
