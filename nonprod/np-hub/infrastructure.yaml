@@ -81,7 +81,7 @@ infrastructure:
     targetRevision: 2.0.0
     namespace: openshift-serverless
   - chart: rhdh-orchestrator-workflows-greeting
-    targetRevision: 2.0.0
+    targetRevision: 2.0.1
     namespace: backstage
 
 
