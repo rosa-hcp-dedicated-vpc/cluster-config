@@ -55,7 +55,7 @@ infrastructure:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.13.4
   - chart: rhdh-helm
-    targetRevision: 1.0.5
+    targetRevision: 1.0.6
     namespace: backstage
     values:
       redhat-developer-hub:
