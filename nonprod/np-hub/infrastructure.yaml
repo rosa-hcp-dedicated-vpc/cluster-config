@@ -77,6 +77,12 @@ infrastructure:
                 uiUrl: 'https://quay.apps.rosa.np-hub.8rzd.p3.openshiftapps.com'
         route:
           host: backstage-backstage.apps.rosa.np-hub.8rzd.p3.openshiftapps.com
+  - chart: redhat-developer-hub-orchestrator-infra
+    targetRevision: 0.2.3
+    namespace: openshift-serverless
+  - chart: redhat-developer-hub-orchestrator-workflows-greeting
+    targetRevision: 1.3.6
+    namespace: backstage
 
 
   # - chart: orchestrator-operator
