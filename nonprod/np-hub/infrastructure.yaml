@@ -55,7 +55,7 @@ infrastructure:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.13.4
   - chart: rhdh-helm
-    targetRevision: 1.0.4
+    targetRevision: 1.0.5
     namespace: backstage
     values:
       redhat-developer-hub:
@@ -78,10 +78,10 @@ infrastructure:
         route:
           host: backstage-backstage.apps.rosa.np-hub.8rzd.p3.openshiftapps.com
   - chart: rhdh-orchestrator-infra
-    targetRevision: 2.0.3
+    targetRevision: 2.0.4
     namespace: openshift-serverless
   - chart: rhdh-orchestrator-workflows-greeting
-    targetRevision: 2.0.3
+    targetRevision: 2.0.4
     namespace: backstage
 
 
