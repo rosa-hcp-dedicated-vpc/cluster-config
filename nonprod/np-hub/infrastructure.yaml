@@ -61,7 +61,7 @@ infrastructure:
       helper-operator:
         startingCSV: serverless-operator.v1.36.1
   - chart: rhdh-helm
-    targetRevision: 1.0.3
+    targetRevision: 1.0.4
     namespace: backstage
     values:
       redhat-developer-hub:
