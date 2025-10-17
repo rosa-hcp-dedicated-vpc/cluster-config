@@ -83,7 +83,11 @@ infrastructure:
   - chart: rhdh-orchestrator-workflows-greeting
     targetRevision: 2.0.5
     namespace: backstage
-
+  - chart: rhsso-operator
+    targetRevision: 0.1.0
+    namespace: backstage
+    values:
+      clientSecret: "kv/data/vplugin/np-hub-secret-2"
 
   # - chart: orchestrator-operator
   #   targetRevision: 1.0.2
