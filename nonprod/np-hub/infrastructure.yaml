@@ -85,7 +85,7 @@ infrastructure:
     namespace: backstage
   - chart: rhsso-operator
     targetRevision: 0.1.0
-    namespace: backstage
+    namespace: rhsso-operator
     values:
       clientSecret: "kv/data/vplugin/np-hub-secret-2"
 
