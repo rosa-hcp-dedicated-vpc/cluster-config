@@ -87,7 +87,7 @@ infrastructure:
     targetRevision: 0.1.0
     namespace: rhsso-operator
     values:
-      clientSecret: "kv/data/vplugin/np-hub-secret-2"
+      clientSecret: "np-hub-secret-2"
 
   # - chart: orchestrator-operator
   #   targetRevision: 1.0.2
