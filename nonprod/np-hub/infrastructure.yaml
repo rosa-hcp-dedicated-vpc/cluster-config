@@ -14,7 +14,7 @@ defaults:
   path: charts
   # Vault plugin defaults.
   plugin: true
-  AWS_REGION: "ap-southeast-2"
+  AWS_REGION: "ap-southeast-4"
   AVP_TYPE: "awssecretsmanager"
 #################################################################
 # INFRASTRUCTURE Charts to be deployed.
