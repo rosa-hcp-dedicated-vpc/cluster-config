@@ -84,7 +84,7 @@ infrastructure:
     targetRevision: 2.0.5
     namespace: backstage
   - chart: rhsso-operator
-    targetRevision: 0.1.7
+    targetRevision: 0.1.8
     namespace: rhsso-operator
     values:
       clientSecret: "np-hub-secret-2"
