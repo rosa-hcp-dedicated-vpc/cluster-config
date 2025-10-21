@@ -55,7 +55,7 @@ infrastructure:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.13.4
   - chart: rhdh-helm
-    targetRevision: 1.1.1
+    targetRevision: 1.1.2
     namespace: backstage
     values:
       redhat-developer-hub:
@@ -112,7 +112,7 @@ infrastructure:
     targetRevision: 2.0.5
     namespace: openshift-serverless
   - chart: rhdh-orchestrator-workflows-greeting
-    targetRevision: 2.0.6
+    targetRevision: 2.0.7
     namespace: backstage
   - chart: rhsso-operator
     targetRevision: 0.2.1
