@@ -146,7 +146,7 @@ infrastructure:
         route:
           host: backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
   - chart: rhdh-orchestrator-infra
-    targetRevision: 2.0.6
+    targetRevision: 2.0.7
     namespace: openshift-serverless
   - chart: rhdh-orchestrator-workflows-greeting
     targetRevision: 2.0.7 
