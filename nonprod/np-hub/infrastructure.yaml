@@ -94,7 +94,11 @@ infrastructure:
                   - '--upstream=http://localhost:7007'
                   - '--http-address=0.0.0.0:4180'
                   - '--skip-provider-button'
-                  - '--insecure-oidc-allow-unverified-email=true' 
+                  - '--insecure-oidc-allow-unverified-email=true'
+                  - '--pass-access-token=true'
+                  - '--pass-user-headers=true'
+                  - '--set-xauthrequest=true'
+                  - '--pass-authorization-header=true' 
             appConfig:
               app:
                 baseUrl: https://backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
@@ -105,6 +109,9 @@ infrastructure:
                 reading:
                   allow:
                     - host: '*.apps.rosa.np-hub.nosu.p3.openshiftapps.com'
+              auth:
+                providers:
+                  oauth2Proxy: {}
               catalog:
                 locations:
                   - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helm/files/showcase-templates.yaml
