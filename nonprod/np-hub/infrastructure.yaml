@@ -60,24 +60,24 @@ infrastructure:
     values:
       redhat-developer-hub:
         global:
-          clusterRouterBase: apps.rosa.np-hub.8rzd.p3.openshiftapps.com
+          clusterRouterBase: apps.rosa.np-hub.nosu.p3.openshiftapps.com
         upstream:
           backstage:
             appConfig:
               app:
-                baseUrl: https://backstage-backstage.apps.rosa.np-hub.8rzd.p3.openshiftapps.com
+                baseUrl: https://backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
               backend:
-                baseUrl: https://backstage-backstage.apps.rosa.np-hub.8rzd.p3.openshiftapps.com
+                baseUrl: https://backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
                 cors:
-                  origin: https://backstage-backstage.apps.rosa.np-hub.8rzd.p3.openshiftapps.com
+                  origin: https://backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
                 reading:
                   allow:
-                    - host: '*.apps.rosa.np-hub.8rzd.p3.openshiftapps.com'
+                    - host: '*.apps.rosa.np-hub.nosu.p3.openshiftapps.com'
               auth:
                 providers:
                   oidc:
                     production:
-                      metadataUrl: https://keycloak-rhsso-operator.apps.rosa.np-hub.8rzd.p3.openshiftapps.com/auth/realms/backstage/.well-known/openid_configuration
+                      metadataUrl: https://keycloak-rhsso-operator.apps.rosa.np-hub.nosu.p3.openshiftapps.com/auth/realms/backstage/.well-known/openid_configuration
               catalog:
                 locations:
                   - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helm/files/showcase-templates.yaml
@@ -99,15 +99,15 @@ infrastructure:
                 providers:
                   keycloakOrg:
                     default:
-                      baseUrl: keycloak-rhsso-operator.apps.rosa.np-hub.8rzd.p3.openshiftapps.com/auth
+                      baseUrl: keycloak-rhsso-operator.apps.rosa.np-hub.nosu.p3.openshiftapps.com/auth
               kubernetes:
                 clusterLocatorMethods:
                   - type: "config"
                     clusters:
                       - name: dev-cluster-infra
-                        url: https://api.rosa.np-hub.8rzd.p3.openshiftapps.com:6443
+                        url: https://api.rosa.np-hub.nosu.p3.openshiftapps.com:6443
         route:
-          host: backstage-backstage.apps.rosa.np-hub.8rzd.p3.openshiftapps.com
+          host: backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
   - chart: rhdh-orchestrator-infra
     targetRevision: 2.0.5
     namespace: openshift-serverless
