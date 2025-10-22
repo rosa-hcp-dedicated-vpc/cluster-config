@@ -142,6 +142,10 @@ infrastructure:
                     type: url
                     rules:
                       - allow: [Domain, Component, System, API, Resource, Location]
+                providers:
+                  keycloakOrg:
+                    default:
+                      baseUrl: keycloak-rhsso-operator.apps.rosa.np-hub.nosu.p3.openshiftapps.com/auth
               argocd:
                 appLocatorMethods:
                   - type: 'config'
