@@ -123,10 +123,18 @@ infrastructure:
                     type: url
                     rules:
                       - allow: [Domain, Component, System, API, Resource, Location]
-            kubernetes:
-              clusterLocatorMethods:
-                - type: "config"
-                  clusters:
+              kubernetes:
+                serviceLocatorMethod:
+                  type: "multiTenant"
+                clusterLocatorMethods:
+                  - type: "config"
+                    clusters:
+                      - name: dev-cluster-infra
+                        url: https://api.rosa.np-hub.nosu.p3.openshiftapps.com:6443
+                        authProvider: "serviceAccount"
+                        skipTLSVerify: true
+                        serviceAccountToken: eyJhbGciOiJSUzI1NiIsImtpZCI6IkFfVHZpekNfUGt1cDROVU53bV8yMVFRNHZHMGExZmszbzNFYjlNMS1tVFkifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImRlZmF1bHQtdG9rZW4iLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGVmYXVsdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6Ijg5ODQ2N2VmLTM0ZDctNDU4Zi1iMGZkLTYyNTE1ZGQwM2U3OCIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmRlZmF1bHQifQ.AAaOIRtOQyFqbJh9cNUjHwgnL8rnk2DfJb7PkdQDdYV9XgpNePZXZvHdMwaOm3HUoksKOocYY9BmX14utGvoHidgk_-rTgi8vZNp30T2wiw8mdX7P6FLFYYMG2Mlo12FzZZjCybDMjXnKZCDZADSGzVGm12PQu6RwdM-I0nNWmI86tvM9MESvZQLsAx50mNN6ZASRbprn5ikfszAPLjdtUb6gn_TdKRzFqvRR9d4Edwq7ZTLy_x4Ssr2Zq0hfA5Li9zNJJuExy1dmzRYtislYSyLtxXLOUjMx69AK9sB1l1eMBzOI4faAJ34Hw7lhazP9KLnEBbXcLxuLZWpB7oPbMibOsaPttcukgO2Nceylin03SwCuc53AHxPuWNmXws3tSktrj2NJokQ6bUfkEvuR0Q_zj58bVCPZiQlgOYgR5w8VDmT4u0NUASeabjRkUPaeWZGT8u5eYPIOWAKR8QlwRB-xz6BqaAYEqKGxhp8tTxu8J3TI9lJQPU7qp29CSQzfa51L3a8gpnD-ZAtW-MDCy2rrqj6qX9FdTH-Y_u3Cjuuq6lzGeKv3dIoOi5eCilp3GsxlF1xoYxYx4BpHzKIUCc0lNKtWvDEtgy0CNaJYd7E7DS8FNKp296Z7ZE9sdhYq6vuMMydOv9yiA_fKrgUzLF8jIiecWwm5T7_A4yh-M8
+                        kubernetes:
         route:
           host: backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
   - chart: rhdh-orchestrator-infra
