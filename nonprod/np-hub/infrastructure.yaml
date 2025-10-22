@@ -123,12 +123,10 @@ infrastructure:
                     type: url
                     rules:
                       - allow: [Domain, Component, System, API, Resource, Location]
-              kubernetes:
+            kubernetes:
               clusterLocatorMethods:
                 - type: "config"
                   clusters:
-                    - name: dev-cluster-infra
-                      url: https://api.rosa.np-hub.nosu.p3.openshiftapps.com:6443
         route:
           host: backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
   - chart: rhdh-orchestrator-infra
