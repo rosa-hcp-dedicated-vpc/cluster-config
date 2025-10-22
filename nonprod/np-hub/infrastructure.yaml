@@ -183,6 +183,9 @@ infrastructure:
     namespace: rhsso-operator
     values:
       clientSecret: "np-hub-secret-2"
+      client:
+        redirectUri:
+          - https://backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com/oauth2/callback
 
   # - chart: orchestrator-operator
   #   targetRevision: 1.0.2
