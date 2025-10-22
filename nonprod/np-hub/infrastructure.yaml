@@ -63,6 +63,11 @@ infrastructure:
           clusterRouterBase: apps.rosa.np-hub.nosu.p3.openshiftapps.com
         upstream:
           backstage:
+            extraContainers:
+              - name: oauth2-proxy
+                env:
+                  - name: OAUTH2_PROXY_OIDC_ISSUER_URL
+                    value: https://keycloak-rhsso-operator.apps.rosa.np-hub.nosu.p3.openshiftapps.com/auth/realms/backstage
             appConfig:
               app:
                 baseUrl: https://backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
