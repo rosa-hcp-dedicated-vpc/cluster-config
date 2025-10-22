@@ -149,7 +149,7 @@ infrastructure:
     targetRevision: 2.0.7 
     namespace: openshift-serverless
   - chart: rhdh-orchestrator-workflows-greeting
-    targetRevision: 2.0.7 
+    targetRevision: 2.0.8
     namespace: backstage
   - chart: rhsso-operator
     targetRevision: 0.2.1
