@@ -96,48 +96,39 @@ infrastructure:
                   - '--skip-provider-button'
                   - '--insecure-oidc-allow-unverified-email=true' 
           appConfig:
-              app:
-                baseUrl: https://backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
-              backend:
-                baseUrl: https://backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
-                cors:
-                  origin: https://backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
-                reading:
-                  allow:
-                    - host: '*.apps.rosa.np-hub.nosu.p3.openshiftapps.com'
-              auth:
-                providers:
-                  oidc:
-                    production:
-                      metadataUrl: https://keycloak-rhsso-operator.apps.rosa.np-hub.nosu.p3.openshiftapps.com/auth/realms/backstage/.well-known/openid_configuration
-              catalog:
-                locations:
-                  - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helm/files/showcase-templates.yaml
-                    type: url
-                    rules:
-                      - allow: [Template]
-                  - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helm/files/org.yaml
-                    type: url
-                    rules:
-                      - allow: [Group, User]
-                  - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helm/files/showcase-templates.yaml
-                    type: url
-                    rules:
-                      - allow: [Template]
-                  - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helmfiles/locations.yaml
-                    type: url
-                    rules:
-                      - allow: [Domain, Component, System, API, Resource, Location]
-                providers:
-                  keycloakOrg:
-                    default:
-                      baseUrl: keycloak-rhsso-operator.apps.rosa.np-hub.nosu.p3.openshiftapps.com/auth
-              kubernetes:
-                clusterLocatorMethods:
-                  - type: "config"
-                    clusters:
-                      - name: dev-cluster-infra
-                        url: https://api.rosa.np-hub.nosu.p3.openshiftapps.com:6443
+            app:
+              baseUrl: https://backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
+            backend:
+              baseUrl: https://backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
+              cors:
+                origin: https://backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
+              reading:
+                allow:
+                  - host: '*.apps.rosa.np-hub.nosu.p3.openshiftapps.com'
+            catalog:
+              locations:
+                - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helm/files/showcase-templates.yaml
+                  type: url
+                  rules:
+                    - allow: [Template]
+                - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helm/files/org.yaml
+                  type: url
+                  rules:
+                    - allow: [Group, User]
+                - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helm/files/showcase-templates.yaml
+                  type: url
+                  rules:
+                    - allow: [Template]
+                - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helmfiles/locations.yaml
+                  type: url
+                  rules:
+                    - allow: [Domain, Component, System, API, Resource, Location]
+            kubernetes:
+              clusterLocatorMethods:
+                - type: "config"
+                  clusters:
+                    - name: dev-cluster-infra
+                      url: https://api.rosa.np-hub.nosu.p3.openshiftapps.com:6443
         route:
           host: backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
   - chart: rhdh-orchestrator-infra
