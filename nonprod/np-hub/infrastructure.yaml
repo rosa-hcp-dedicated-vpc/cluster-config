@@ -117,13 +117,13 @@ infrastructure:
                 reading:
                   allow:
                     - host: '*.apps.rosa.np-hub.nosu.p3.openshiftapps.com'
-              auth:
-                environment: production
-                providers:
-                  oauth2Proxy: {}
-                session:
-                  secret: ${BACKEND_SECRET}
-              signInPage: oauth2Proxy
+              # auth:
+              #   environment: production
+              #   providers:
+              #     oauth2Proxy: {}
+              #   session:
+              #     secret: ${BACKEND_SECRET}
+              #: oauth2Proxy
               catalog:
                 locations:
                   - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helm/files/showcase-templates.yaml
