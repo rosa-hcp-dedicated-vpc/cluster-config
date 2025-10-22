@@ -82,18 +82,18 @@ infrastructure:
                     value: https://keycloak-rhsso-operator.apps.rosa.np-hub.nosu.p3.openshiftapps.com/auth/realms/backstage
                   - name: OAUTH2_PROXY_SSL_INSECURE_SKIP_VERIFY
                     value: 'true'
-                  - name: OAUTH2_PROXY_SCOPE
-                    value: 'openid profile email'
-                  - name: OAUTH2_PROXY_OIDC_GROUPS_CLAIM
-                    value: 'groups'
-                  - name: OAUTH2_PROXY_PASS_BASIC_AUTH
-                    value: 'false'
-                  - name: OAUTH2_PROXY_PASS_HOST_HEADER
-                    value: 'true'
-                  - name: OAUTH2_PROXY_SET_XAUTHREQUEST
-                    value: 'true'
-                  - name: OAUTH2_PROXY_PASS_USER_HEADERS
-                    value: 'true'
+                  # - name: OAUTH2_PROXY_SCOPE
+                  #   value: 'openid profile email'
+                  # - name: OAUTH2_PROXY_OIDC_GROUPS_CLAIM
+                  #   value: 'groups'
+                  # - name: OAUTH2_PROXY_PASS_BASIC_AUTH
+                  #   value: 'false'
+                  # - name: OAUTH2_PROXY_PASS_HOST_HEADER
+                  #   value: 'true'
+                  # - name: OAUTH2_PROXY_SET_XAUTHREQUEST
+                  #   value: 'true'
+                  # - name: OAUTH2_PROXY_PASS_USER_HEADERS
+                  #   value: 'true'
                 ports:
                   - name: oauth2-proxy
                     containerPort: 4180
@@ -117,15 +117,6 @@ infrastructure:
                 reading:
                   allow:
                     - host: '*.apps.rosa.np-hub.nosu.p3.openshiftapps.com'
-              auth:
-                environment: production
-                providers:
-                  oauth2Proxy:
-                    production:
-                      audience: backstage
-                session:
-                  secret: ${BACKEND_SECRET}
-              signInPage: oauth2Proxy
               catalog:
                 locations:
                   - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helm/files/showcase-templates.yaml
