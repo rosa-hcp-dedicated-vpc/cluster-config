@@ -123,6 +123,14 @@ infrastructure:
                     type: url
                     rules:
                       - allow: [Domain, Component, System, API, Resource, Location]
+              argocd:
+                appLocatorMethods:
+                  - type: 'config'
+                    instances:
+                      - name: application-gitops
+                        url: https://application-gitops-server-application-gitops.apps.rosa.np-hub.nosu.p3.openshiftapps.com
+                        username: admin
+                        password: Mjc2NDk2
               kubernetes:
                 serviceLocatorMethod:
                   type: "multiTenant"
