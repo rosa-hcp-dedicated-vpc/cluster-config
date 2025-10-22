@@ -127,8 +127,7 @@ infrastructure:
                     production:
                       audience: backstage
                 session:
-                  secret:
-                    $env: 'BACKEND_SECRET'
+                  secret: ${BACKEND_SECRET}
               catalog:
                 locations:
                   - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helm/files/showcase-templates.yaml
