@@ -66,9 +66,36 @@ infrastructure:
             extraContainers:
               - name: oauth2-proxy
                 env:
+                  - name: OAUTH2_PROXY_CLIENT_ID
+                    valueFrom:
+                      secretKeyRef:
+                        key: CLIENT_ID
+                        name: keycloak-client-secret-backstage
+                  - name: OAUTH2_PROXY_CLIENT_SECRET
+                    valueFrom:
+                      secretKeyRef:
+                        key: CLIENT_SECRET
+                        name: keycloak-client-secret-backstage
+                  - name: OAUTH2_PROXY_COOKIE_SECRET
+                    value: "{{ randAlpha 32 | lower | b64enc }}"
                   - name: OAUTH2_PROXY_OIDC_ISSUER_URL
                     value: https://keycloak-rhsso-operator.apps.rosa.np-hub.nosu.p3.openshiftapps.com/auth/realms/backstage
-            appConfig:
+                  - name: OAUTH2_PROXY_SSL_INSECURE_SKIP_VERIFY
+                    value: 'true'
+                ports:
+                  - name: oauth2-proxy
+                    containerPort: 4180
+                    protocol: TCP
+                imagePullPolicy: IfNotPresent
+                image: 'quay.io/oauth2-proxy/oauth2-proxy:latest'
+                args:
+                  - '--provider=oidc'
+                  - '--email-domain=*'
+                  - '--upstream=http://localhost:7007'
+                  - '--http-address=0.0.0.0:4180'
+                  - '--skip-provider-button'
+                  - '--insecure-oidc-allow-unverified-email=true' 
+          appConfig:
               app:
                 baseUrl: https://backstage-backstage.apps.rosa.np-hub.nosu.p3.openshiftapps.com
               backend:
