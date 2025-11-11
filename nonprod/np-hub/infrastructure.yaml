@@ -184,12 +184,14 @@ infrastructure:
   - chart: rhdh-orchestrator-workflows-greeting
     targetRevision: 2.0.8
     namespace: backstage
-  - chart: rhb-keycloak-operator
-    targetRevision: 0.1.1
+  - chart: rhbk-operator
+    targetRevision: 0.1.2
     namespace: keycloak-operator
     values:
       clientSecret: "np-hub-secret-2"
       clusterDomain: "apps.rosa.np-hub.8rzd.p3.openshiftapps.com"
+      subscription:
+        startingCSV: "rhbk-operator.v26.4.2-opr.1"
       client:
         redirectUri:
           - https://backstage-backstage.apps.rosa.np-hub.8rzd.p3.openshiftapps.com/oauth2/callback
