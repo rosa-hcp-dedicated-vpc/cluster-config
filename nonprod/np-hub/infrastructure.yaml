@@ -185,7 +185,7 @@ infrastructure:
     targetRevision: 2.0.8
     namespace: backstage
   - chart: rhbk-operator
-    targetRevision: 0.1.4
+    targetRevision: 0.1.5
     namespace: rhbk-operator
     values:
       clientSecret: "np-hub-secret-2"
