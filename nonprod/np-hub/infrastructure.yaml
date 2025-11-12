@@ -84,6 +84,11 @@ infrastructure:
                     - host: '*.apps.rosa.np-hub.iqbc.p3.openshiftapps.com'
               auth:
                 environment: production
+                externalAccess:
+                  - type: static
+                    options:
+                      token: ${BACKEND_SECRET}
+                      subject: backstage-server
                 providers:
                   oidc:
                     production:
