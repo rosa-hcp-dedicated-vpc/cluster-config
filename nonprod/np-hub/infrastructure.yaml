@@ -72,6 +72,8 @@ infrastructure:
                   secretKeyRef:
                     key: CLIENT_SECRET
                     name: keycloak-client-secret-backstage
+              - name: BACKEND_SECRET
+                value: "{{ randAlphaNum 24 | b64enc }}"
             appConfig:
               app:
                 baseUrl: https://backstage-backstage.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
