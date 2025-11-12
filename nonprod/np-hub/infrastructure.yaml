@@ -89,10 +89,12 @@ infrastructure:
                     production:
                       metadataUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.iqbc.p3.openshiftapps.com/realms/backstage/.well-known/openid_configuration
                       clientId: backstage
-                      clientSecret: ${KEYCLOAK_CLIENT_SECRET}
+                      clientSecret:
+                        $env: KEYCLOAK_CLIENT_SECRET
                       prompt: auto
                 session:
-                  secret: ${BACKEND_SECRET}
+                  secret:
+                    $env: BACKEND_SECRET
               signInPage: oidc
               catalog:
                 locations:
