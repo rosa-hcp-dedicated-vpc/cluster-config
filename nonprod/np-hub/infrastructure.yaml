@@ -88,7 +88,7 @@ infrastructure:
                   externalAccess:
                     - type: static
                       options:
-                        token: ${BACKEND_SECRET}
+                        token: "my-backend-secret-token-12345"
                         subject: backstage-server
               auth:
                 environment: production
