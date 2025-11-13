@@ -166,7 +166,7 @@ infrastructure:
         startingCSV: "rhbk-operator.v26.4.2-opr.1"
       client:
         redirectUri:
-          - https://backstage-backstage.apps.rosa.np-hub.iqbc.p3.openshiftapps.com/oauth2/callback
+          - https://backstage-backstage.apps.rosa.np-hub.iqbc.p3.openshiftapps.com/api/auth/oidc/handler/frame
 
   # - chart: orchestrator-operator
   #   targetRevision: 1.0.2
