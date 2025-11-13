@@ -99,8 +99,8 @@ infrastructure:
                       clientId: backstage
                       clientSecret: 8L4FCxzOKlNIoJd8BloTPjXip1AE9uOj
                       prompt: auto
-                session:
-                  secret: ${BACKEND_SECRET}
+              session:
+                secret: ${BACKEND_SECRET}
               signInPage: oidc
               catalog:
                 locations:
