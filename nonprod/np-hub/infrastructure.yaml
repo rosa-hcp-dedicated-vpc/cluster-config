@@ -95,7 +95,7 @@ infrastructure:
                 providers:
                   oidc:
                     production:
-                      metadataUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.iqbc.p3.openshiftapps.com/realms/backstage/.well-known/openid_configuration
+                      metadataUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.iqbc.p3.openshiftapps.com/realms/backstage/.well-known/openid-configuration
                       clientId: backstage
                       clientSecret: 8L4FCxzOKlNIoJd8BloTPjXip1AE9uOj
                       prompt: auto
