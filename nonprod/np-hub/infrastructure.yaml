@@ -101,7 +101,6 @@ infrastructure:
                       prompt: auto
                       signIn:
                         resolvers:
-                          - resolver: usernameMatchingUserEntityName
                           - resolver: emailMatchingUserEntityProfileEmail
                           - resolver: emailLocalPartMatchingUserEntityName
               session:
