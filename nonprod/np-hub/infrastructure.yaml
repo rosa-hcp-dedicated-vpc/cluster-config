@@ -108,19 +108,15 @@ infrastructure:
               signInPage: oidc
               catalog:
                 locations:
-                  - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helm/files/showcase-templates.yaml
+                  - target: https://raw.githubusercontent.com/rosa-hcp-dedicated-vpc/helm-repository/main/charts/rhdh-helm/files/showcase-templates.yaml
                     type: url
                     rules:
                       - allow: [Template]
-                  - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helm/files/org.yaml
+                  - target: https://raw.githubusercontent.com/rosa-hcp-dedicated-vpc/helm-repository/main/charts/rhdh-helm/files/org.yaml
                     type: url
                     rules:
                       - allow: [Group, User]
-                  - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helm/files/showcase-templates.yaml
-                    type: url
-                    rules:
-                      - allow: [Template]
-                  - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/tree/main/charts/rhdh-helmfiles/locations.yaml
+                  - target: https://raw.githubusercontent.com/rosa-hcp-dedicated-vpc/helm-repository/main/charts/rhdh-helm/files/locations.yaml
                     type: url
                     rules:
                       - allow: [Domain, Component, System, API, Resource, Location]
@@ -169,7 +165,7 @@ infrastructure:
     targetRevision: 2.0.8
     namespace: backstage
   - chart: rhbk-operator
-    targetRevision: 0.2.2
+    targetRevision: 0.2.4
     namespace: rhbk-operator
     values:
       clientSecret: "np-hub-secret-2"
