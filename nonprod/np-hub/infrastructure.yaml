@@ -128,6 +128,14 @@ infrastructure:
                   keycloakOrg:
                     default:
                       baseUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+                      clientId: ${KEYCLOAK_CLIENT_ID}
+                      clientSecret: ${KEYCLOAK_CLIENT_SECRET}
+                      loginRealm: backstage
+                      realm: backstage
+                      schedule:
+                        frequency: { minutes: 30 }
+                        timeout: { minutes: 5 }
+                        initialDelay: { seconds: 15 }
               argocd:
                 appLocatorMethods:
                   - type: 'config'
