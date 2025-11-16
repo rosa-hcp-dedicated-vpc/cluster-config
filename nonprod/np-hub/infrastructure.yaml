@@ -164,8 +164,7 @@ infrastructure:
                         url: https://api.np-hub.iqbc.p3.openshiftapps.com:443
                         authProvider: "serviceAccount"
                         skipTLSVerify: true
-                        serviceAccountToken:
-                          $env: K8S_SERVICE_ACCOUNT_TOKEN
+                        serviceAccountToken: "${K8S_SERVICE_ACCOUNT_TOKEN}"
                         kubernetes:
           service:
             ports:
