@@ -55,10 +55,15 @@ infrastructure:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.14.1
   - chart: rhdh-helm
-    targetRevision: 1.5.0
+    targetRevision: 1.5.1
     namespace: backstage
     values:
       keycloakUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+      consoleLink:
+        enabled: true
+        url: https://backstage-backstage.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+        text: "Red Hat Developer Hub"
+        section: "Developer Tools"
       redhat-developer-hub:
         global:
           clusterRouterBase: apps.rosa.np-hub.iqbc.p3.openshiftapps.com
@@ -177,11 +182,16 @@ infrastructure:
     targetRevision: 2.0.8
     namespace: backstage
   - chart: rhbk-operator
-    targetRevision: 0.2.4
+    targetRevision: 0.2.5
     namespace: rhbk-operator
     values:
       clientSecret: "np-hub-secret-2"
       clusterDomain: "apps.rosa.np-hub.iqbc.p3.openshiftapps.com"
+      consoleLink:
+        enabled: true
+        url: https://keycloak-rhbk-operator.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+        text: "Red Hat Build of Keycloak"
+        section: "Authentication"
       subscription:
         startingCSV: "rhbk-operator.v26.4.2-opr.1"
       client:

@@ -27,7 +27,7 @@ infrastructure:
       roleArn: arn:aws:iam::808082629126:role/np-ai-1-rosa-efs-csi-role-iam
       fileSystemId: fs-0718beb50be783f1e
       helper-operator:
-        startingCSV: aws-efs-csi-driver-operator.v4.19.0-202509292054
+        startingCSV: aws-efs-csi-driver-operator.v4.20.0-202511040554
   - chart: compliance-operator
     targetRevision: 1.2.10
     namespace: openshift-compliance
@@ -39,19 +39,20 @@ infrastructure:
     namespace: overprovisioning
     values:
   - chart: cluster-logging
-    targetRevision: 0.5.10
+    targetRevision: 0.5.11
     namespace: openshift-logging
     values:
       roleArn: arn:aws:iam::808082629126:role/np-app-1-rosa-cloudwatch-role-iam
       region: ap-southeast-2
       helper-operator:
-        startingCSV: cluster-logging.v6.2.3
+        startingCSV: cluster-logging.v6.4.0
   - chart: rhods-operator
-    targetRevision: 1.2.12
+    targetRevision: 1.3.0
     namespace: redhat-ods-operator
     values:
       helper-operator:
-        startingCSV: rhods-operator.2.22.2
+        #startingCSV: rhods-operator.2.22.2
+        startingCSV: rhods-operator.3.0.0
   - chart: servicemesh-operator
     targetRevision: 0.4.10
     namespace: openshift-operators
@@ -70,28 +71,28 @@ infrastructure:
     namespace: openshift-operators
     values:
       helper-operator:
-        startingCSV: kiali-operator.v2.11.3
+        startingCSV: kiali-operator.v2.17.1
   - chart: lightspeed-operator
     targetRevision: 0.3.5
     namespace: openshift-lightspeed
     values:
-      startingCSV: lightspeed-operator.v1.0.5
+      startingCSV: lightspeed-operator.v1.0.7
       modelURL: "https://mistral-small-24b-instruct-quantized-mistral-ai.apps.rosa.np-ai-1.ttrc.p3.openshiftapps.com/v1"
   - chart: nfd-operator
     targetRevision: 0.3.6
     namespace: openshift-nfd
     values:
-      startingCSV: nfd.v4.19.0-202506020913
+      startingCSV: nfd.4.20.0-202510221121
   - chart: nvidia-gpu-operator
     targetRevision: 0.2.13
     namespace: nvidia-gpu-operator
     values:
-      startingCSV: gpu-operator-certified.v25.3.4
+      startingCSV: gpu-operator-certified.v25.10.0
   - chart: model-mistral
     targetRevision: 0.3.15
     namespace: mistral-ai
     values:
-  - chart: milvus
-    targetRevision: 5.0.8
-    namespace: milvus
-    values:
+  # - chart: milvus
+  #   targetRevision: 5.0.8
+  #   namespace: milvus
+  #   values:
