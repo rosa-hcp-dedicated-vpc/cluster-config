@@ -164,7 +164,7 @@ infrastructure:
                         url: https://api.np-hub.iqbc.p3.openshiftapps.com:443
                         authProvider: "serviceAccount"
                         skipTLSVerify: true
-                        serviceAccountToken: "eyJhbGciOiJSUzI1NiIsImtpZCI6ImptUkZHak5ndldWYTlES1FyTDVKWUJtMFVXVkxYS2NBdkwwNDZUclVrT2sifQ.eyJhdWQiOlsiaHR0cHM6Ly9vaWRjLm9wMS5vcGVuc2hpZnRhcHBzLmNvbS8ybWdtbGsxcmY2bXZzbDljZzk0cmpyZWR1dmJ1MXBxYSJdLCJleHAiOjIxMjMzMzg4NDMsImlhdCI6MTc2MzM0MjQ0MywiaXNzIjoiaHR0cHM6Ly9vaWRjLm9wMS5vcGVuc2hpZnRhcHBzLmNvbS8ybWdtbGsxcmY2bXZzbDljZzk0cmpyZWR1dmJ1MXBxYSIsImp0aSI6IjE2OTFmZTNlLTAzZDUtNDNmOC1hOGU5LTdmYzljOWFhMjc4YSIsImt1YmVybmV0ZXMuaW8iOnsibmFtZXNwYWNlIjoiYmFja3N0YWdlIiwic2VydmljZWFjY291bnQiOnsibmFtZSI6ImJhY2tzdGFnZS1rOHMtc2EiLCJ1aWQiOiI5MWJjNGQ3NC04ZTBhLTRmYmUtOWFiNC1kNTBlNWZiOTM1ODgifX0sIm5iZiI6MTc2MzM0MjQ0Mywic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OmJhY2tzdGFnZTpiYWNrc3RhZ2UtazhzLXNhIn0.FkbsfTuGzMmUC-DNxmcnO1xTxhuCxNkdB1hNrC09wilqsOa7Sz4yMLrXy1NWoPJDWVBcRdOXaNc3caq0s-SLhqAtxckEkzYMwY4aSCtHC1joYKRg-4GH_KsdTda803BeBQw-e7RRbKMwWxB5gamoea74Sl1xvhq8TYouO9JKGox78mdSSQ377Q-mESJaJZi8bGqMQLqEFFqRrBBCY1bt7MCrNC0j41pPtf5vLV6zDC4UptxAEYP3YDXqApaGKaGTIC_etjBeobJhQyZfyxbLW5BmHmbJkUX37gSRpON-YnnxCrO5L66ud2zVGtZpKwutY89u9QgzKtkBz_NKSOpMt7YgMlnG4p6buWaCPOjHUqhZ_iBqog7B5JWf_691hHlaCjPQPYTQtiVk0OVc4NXMRgt3j5PmO2GlL_OeFr9aeXS4IqTGcbLYbTIYd9PTQl28obQ6GIAyIYUsY6G6blrRdh7VJupaQyu3hUL_OtvRyhWhybJTKFM3U1e6hHuVoyVe0VkS-gx0HVARF9wnGahhnC-UPv7oM9JhQgx4LrThysZqTG6a56nyQdYXWU5RaREjT2ycpLMjvp9x-qwKsLAOKaui91K9unqq3stOOmO1BIs1l-j4HociIaO4K1SLj3fJ19VBgOxa766TmViPP955I4SkDTUFHSvH6Bc74F-by"
+                        serviceAccountToken: "$${K8S_SERVICE_ACCOUNT_TOKEN}"
           service:
             ports:
               backend: 7007
