@@ -55,7 +55,7 @@ infrastructure:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.14.1
   - chart: rhdh-helm
-    targetRevision: 1.5.0
+    targetRevision: 1.5.1
     namespace: backstage
     values:
       keycloakUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
@@ -164,7 +164,7 @@ infrastructure:
                         url: https://api.np-hub.iqbc.p3.openshiftapps.com:443
                         authProvider: "serviceAccount"
                         skipTLSVerify: true
-                        serviceAccountToken: "eyJhbGciOiJSUzI1NiIsImtpZCI6ImptUkZHak5ndldWYTlES1FyTDVKWUJtMFVXVkxYS2NBdkwwNDZUclVrT2sifQ.eyJhdWQiOlsiaHR0cHM6Ly9vaWRjLm9wMS5vcGVuc2hpZnRhcHBzLmNvbS8ybWdtbGsxcmY2bXZzbDljZzk0cmpyZWR1dmJ1MXBxYSJdLCJleHAiOjIxMjMzMzA1ODYsImlhdCI6MTc2MzMzNDE4NiwiaXNzIjoiaHR0cHM6Ly9vaWRjLm9wMS5vcGVuc2hpZnRhcHBzLmNvbS8ybWdtbGsxcmY2bXZzbDljZzk0cmpyZWR1dmJ1MXBxYSIsImp0aSI6ImY5NTBmMWI5LTk0OTItNDQ5OS04NTQ0LTBiYzU2ZjYwNTM5MiIsImt1YmVybmV0ZXMuaW8iOnsibmFtZXNwYWNlIjoiYmFja3N0YWdlIiwic2VydmljZWFjY291bnQiOnsibmFtZSI6ImJhY2tzdGFnZS1rOHMtc2EiLCJ1aWQiOiI5OTFiN2YyMS01ZDJhLTQ3NDEtYjRhMC01Nzk1OWJlNjIwODIifX0sIm5iZiI6MTc2MzMzNDE4Niwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OmJhY2tzdGFnZTpiYWNrc3RhZ2UtazhzLXNhIn0.ROz71YE_cc5sz-1QwEdicBbyBufjW-0_zyXUAqHW2QrhycDLawnSv64Io9F-mBL5vLTroj6qctdk80F_oznJq7mEYb777nd_iSYYMKR96v1iMTgGKpORXAq-6gjwnXdEOV_o_qM7cjzgi1zivmBmvUdNWBhEhnOTsHzeU_jyFOZ0gxLZc5GJf5VfML-0ti4srsm7-QQ28ShusMhST5QA4vwm4QkbRVTiX0mnhTWsi_50zMSNGkev2qolo2ecf6VR3dZvB_VPt53X80MH_TkveySHfSeAv5M6BiakGKyvJ9LXrIuQIPjP0yN5xvTc71kxzB9jrjw-Rl1QNgvzBCM_QPY55_X0Wq6BaQicBOiYP3eOSpFIqL2GZbsmjxDB-7iRppwIWMj4QrwRcNMsArgH2UQS7Be9LxblBcfBBghF6P4B3e4oI6nsoZxY4x0gG8ps_w34rVkK1PFpNmd6P-BGF7cVVBD_9cJ5li_6btwN_fqb7wHC25H6l2oXhTrP9UZSrgtywDnYqoDEcGRK6-fPTXfjsF3E8caXYFiUQJAysW_q1hRCrqRxONI6sHPTp162kgtNqcmEP491eh1yRs0hHVklRHm1541naAxWjfElANCs2rmIQDypOO6zgnBfTUrvS807hhZHw6phNsEJtZwAaq2iqmBSHn-e0WIqI1_4x"
+                        serviceAccountToken: "${K8S_SERVICE_ACCOUNT_TOKEN}"
                         kubernetes:
           service:
             ports:
