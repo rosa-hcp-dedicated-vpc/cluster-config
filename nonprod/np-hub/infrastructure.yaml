@@ -103,14 +103,14 @@ infrastructure:
                     production:
                       metadataUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.iqbc.p3.openshiftapps.com/realms/backstage/.well-known/openid-configuration
                       clientId: backstage
-                      clientSecret: 8L4FCxzOKlNIoJd8BloTPjXip1AE9uOj
+                      clientSecret: "$${KEYCLOAK_CLIENT_SECRET}"
                       prompt: auto
                       # signIn:
                       #   resolvers:
                       #     - resolver: emailMatchingUserEntityProfileEmail
                       #     - resolver: emailLocalPartMatchingUserEntityName
               session:
-                secret: ${BACKEND_SECRET}
+                secret: "$${BACKEND_SECRET}"
               signInPage: oidc
               catalog:
                 locations:
@@ -139,7 +139,7 @@ infrastructure:
                       default:
                         baseUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
                         clientId: backstage
-                        clientSecret: 8L4FCxzOKlNIoJd8BloTPjXip1AE9uOj
+                        clientSecret: "$${KEYCLOAK_CLIENT_SECRET}"
                         loginRealm: backstage
                         realm: backstage
                         schedule:
