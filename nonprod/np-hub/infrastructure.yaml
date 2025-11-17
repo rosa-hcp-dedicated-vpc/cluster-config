@@ -158,6 +158,9 @@ infrastructure:
                       - name: application-gitops
                         url: https://application-gitops-server-application-gitops.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
                         token: "$${K8S_SERVICE_ACCOUNT_TOKEN}"
+                      - name: cluster-gitops
+                        url: https://cluster-gitops-server-openshift-gitops.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+                        token: "$${K8S_SERVICE_ACCOUNT_TOKEN}"
               kubernetes:
                 serviceLocatorMethod:
                   type: "multiTenant"
