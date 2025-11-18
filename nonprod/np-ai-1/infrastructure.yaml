@@ -61,7 +61,7 @@ infrastructure:
         enabled: true
         startingCSV: servicemeshoperator.v2.6.11
   - chart: authorino-operator
-    targetRevision: 0.1.0
+    targetRevision: 0.1.1
     namespace: openshift-operators
     values:
       subscription:
@@ -90,7 +90,7 @@ infrastructure:
     values:
       startingCSV: nfd.4.20.0-202510221121
   - chart: nvidia-gpu-operator
-    targetRevision: 0.2.13
+    targetRevision: 0.2.14
     namespace: nvidia-gpu-operator
     values:
       startingCSV: gpu-operator-certified.v25.10.0
