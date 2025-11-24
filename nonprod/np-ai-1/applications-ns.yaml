@@ -7,13 +7,14 @@ teamName: platform
 #################################################################
 defaults:
   # argcod application defaults
+  clusterName: np-ai-1
   finalizers: resources-finalizer.argocd.argoproj.io
   gitopsNamespace: openshift-gitops
   # Helm defaults
   helmRepoUrl: https://rosa-hcp-dedicated-vpc.github.io/helm-repository
   path: charts
-  chart: app-of-apps-namespaces
-  targetRevision: 0.3.3
+  chart: app-of-apps-namespaces-acm
+  targetRevision: 0.2.5
   # Vault plugin defaults.
   plugin: false
   AWS_REGION: "ap-southeast-2"

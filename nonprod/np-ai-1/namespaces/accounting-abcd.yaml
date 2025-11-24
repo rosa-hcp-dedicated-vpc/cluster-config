@@ -4,6 +4,7 @@ apmnum: "5678"
 # #################################################################
 defaults:
   # argcod application defaults
+  clusterName: np-ai-1
   finalizers: resources-finalizer.argocd.argoproj.io
   gitopsNamespace: openshift-gitops
   # Helm defaults

@@ -7,6 +7,7 @@ teamName: cluster-config
 #################################################################
 defaults:
   # argcod application defaults
+  clusterName: np-spoke-1
   finalizers: resources-finalizer.argocd.argoproj.io
   gitopsNamespace: openshift-gitops
   # Helm defaults

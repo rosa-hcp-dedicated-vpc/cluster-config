@@ -7,6 +7,7 @@ teamName: platform
 #################################################################
 defaults:
   # argcod application defaults
+  clusterName: np-virt-1
   finalizers: resources-finalizer.argocd.argoproj.io
   gitopsNamespace: openshift-gitops
   # Helm defaults

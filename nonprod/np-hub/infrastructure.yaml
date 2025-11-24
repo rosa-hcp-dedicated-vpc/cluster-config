@@ -7,6 +7,7 @@ teamName: cluster-config
 #################################################################
 defaults:
   # argcod application defaults
+  clusterName: np-hub
   finalizers: resources-finalizer.argocd.argoproj.io
   gitopsNamespace: openshift-gitops
   # Helm defaults
@@ -47,7 +48,7 @@ infrastructure:
       helper-operator:
         startingCSV: cluster-logging.v6.2.3
   - chart: acm-operator
-    targetRevision: 0.2.14
+    targetRevision: 0.3.8
     namespace: open-cluster-management
     annotations:
       argocd.argoproj.io/compare-options: IgnoreExtraneous
