@@ -59,15 +59,15 @@ infrastructure:
     targetRevision: 1.6.1
     namespace: backstage
     values:
-      keycloakUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+      keycloakUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.alde.p3.openshiftapps.com
       consoleLink:
         enabled: true
-        url: https://backstage-backstage.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+        url: https://backstage-backstage.apps.rosa.np-hub.alde.p3.openshiftapps.com
         text: "Red Hat Developer Hub"
         section: "Developer Tools"
       redhat-developer-hub:
         global:
-          clusterRouterBase: apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+          clusterRouterBase: apps.rosa.np-hub.alde.p3.openshiftapps.com
         upstream: 
           backstage:
             extraEnvVars:
@@ -87,14 +87,14 @@ infrastructure:
                     name: backstage-k8s-token
             appConfig:
               app:
-                baseUrl: https://backstage-backstage.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+                baseUrl: https://backstage-backstage.apps.rosa.np-hub.alde.p3.openshiftapps.com
               backend:
-                baseUrl: https://backstage-backstage.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+                baseUrl: https://backstage-backstage.apps.rosa.np-hub.alde.p3.openshiftapps.com
                 cors:
-                  origin: https://backstage-backstage.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+                  origin: https://backstage-backstage.apps.rosa.np-hub.alde.p3.openshiftapps.com
                 reading:
                   allow:
-                    - host: '*.apps.rosa.np-hub.iqbc.p3.openshiftapps.com'
+                    - host: '*.apps.rosa.np-hub.alde.p3.openshiftapps.com'
                     - host: 'raw.githubusercontent.com'
                 auth:
                   externalAccess:
@@ -107,7 +107,7 @@ infrastructure:
                 providers:
                   oidc:
                     production:
-                      metadataUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.iqbc.p3.openshiftapps.com/realms/backstage/.well-known/openid-configuration
+                      metadataUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.alde.p3.openshiftapps.com/realms/backstage/.well-known/openid-configuration
                       clientId: backstage
                       clientSecret: "$${KEYCLOAK_CLIENT_SECRET}"
                       prompt: auto
@@ -143,7 +143,7 @@ infrastructure:
                       owner: group:rhdh
                   keycloakOrg:
                       default:
-                        baseUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+                        baseUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.alde.p3.openshiftapps.com
                         clientId: backstage
                         clientSecret: "$${KEYCLOAK_CLIENT_SECRET}"
                         loginRealm: backstage
@@ -157,10 +157,10 @@ infrastructure:
                   - type: 'config'
                     instances:
                       - name: application-gitops
-                        url: https://application-gitops-server-application-gitops.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+                        url: https://application-gitops-server-application-gitops.apps.rosa.np-hub.alde.p3.openshiftapps.com
                         token: "$${K8S_SERVICE_ACCOUNT_TOKEN}"
                       - name: cluster-gitops
-                        url: https://cluster-gitops-server-openshift-gitops.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+                        url: https://cluster-gitops-server-openshift-gitops.apps.rosa.np-hub.alde.p3.openshiftapps.com
                         token: "$${K8S_SERVICE_ACCOUNT_TOKEN}"
               kubernetes:
                 serviceLocatorMethod:
@@ -169,7 +169,7 @@ infrastructure:
                   - type: "config"
                     clusters:
                       - name: dev-cluster-infra
-                        url: https://api.np-hub.iqbc.p3.openshiftapps.com:443
+                        url: https://api.np-hub.alde.p3.openshiftapps.com:443
                         authProvider: "serviceAccount"
                         skipTLSVerify: true
                         serviceAccountToken: "$${K8S_SERVICE_ACCOUNT_TOKEN}"
@@ -178,7 +178,7 @@ infrastructure:
               backend: 7007
               targetPort: backend
         route:
-          host: backstage-backstage.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+          host: backstage-backstage.apps.rosa.np-hub.alde.p3.openshiftapps.com
   - chart: rhdh-orchestrator-infra
     targetRevision: 2.0.7 
     namespace: openshift-serverless
@@ -190,17 +190,17 @@ infrastructure:
     namespace: rhbk-operator
     values:
       clientSecret: "np-hub-secret-2"
-      clusterDomain: "apps.rosa.np-hub.iqbc.p3.openshiftapps.com"
+      clusterDomain: "apps.rosa.np-hub.alde.p3.openshiftapps.com"
       consoleLink:
         enabled: true
-        url: https://keycloak-rhbk-operator.apps.rosa.np-hub.iqbc.p3.openshiftapps.com
+        url: https://keycloak-rhbk-operator.apps.rosa.np-hub.alde.p3.openshiftapps.com
         text: "Red Hat Build of Keycloak"
         section: "Authentication"
       subscription:
         startingCSV: "rhbk-operator.v26.4.2-opr.1"
       client:
         redirectUri:
-          - https://backstage-backstage.apps.rosa.np-hub.iqbc.p3.openshiftapps.com/api/auth/oidc/handler/frame
+          - https://backstage-backstage.apps.rosa.np-hub.alde.p3.openshiftapps.com/api/auth/oidc/handler/frame
 
   # - chart: orchestrator-operator
   #   targetRevision: 1.0.2
