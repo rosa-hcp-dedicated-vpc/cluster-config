@@ -48,7 +48,7 @@ infrastructure:
       helper-operator:
         startingCSV: cluster-logging.v6.2.3
   - chart: acm-operator
-    targetRevision: 0.3.14
+    targetRevision: 0.3.15
     namespace: open-cluster-management
     annotations:
       argocd.argoproj.io/compare-options: IgnoreExtraneous
