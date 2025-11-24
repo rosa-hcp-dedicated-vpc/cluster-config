@@ -54,13 +54,13 @@ infrastructure:
       helper-operator:
         #startingCSV: rhods-operator.2.22.2
         startingCSV: rhods-operator.3.0.0
-  - chart: servicemesh-operator
-    targetRevision: 0.4.10
-    namespace: openshift-operators
-    values:
-      helper-operator:
-        enabled: true
-        startingCSV: servicemeshoperator.v2.6.11
+  # - chart: servicemesh-operator
+  #   targetRevision: 0.4.10
+  #   namespace: openshift-operators
+  #   values:
+  #     helper-operator:
+  #       enabled: true
+  #       startingCSV: servicemeshoperator.v2.6.11
   - chart: authorino-operator
     targetRevision: 0.1.1
     namespace: openshift-operators
