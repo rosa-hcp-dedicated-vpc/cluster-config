@@ -56,7 +56,7 @@ infrastructure:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.14.1
   - chart: rhdh-helm
-    targetRevision: 1.6.1
+    targetRevision: 1.6.2
     namespace: backstage
     values:
       keycloakUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.alde.p3.openshiftapps.com
