@@ -86,7 +86,7 @@ infrastructure:
       startingCSV: lightspeed-operator.v1.0.7
       modelURL: "https://mistral-small-24b-instruct-quantized-mistral-ai.apps.rosa.np-ai-1.jzwm.p3.openshiftapps.com/v1"
   - chart: nfd-operator
-    targetRevision: 0.3.8
+    targetRevision: 0.3.9
     namespace: openshift-nfd
     values:
       startingCSV: nfd.4.20.0-202510221121
