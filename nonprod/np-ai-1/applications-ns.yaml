@@ -14,7 +14,7 @@ defaults:
   helmRepoUrl: https://rosa-hcp-dedicated-vpc.github.io/helm-repository
   path: charts
   chart: app-of-apps-namespaces-acm
-  targetRevision: 0.2.6
+  targetRevision: 0.3.9
   # Vault plugin defaults.
   plugin: false
   AWS_REGION: "ap-southeast-2"
