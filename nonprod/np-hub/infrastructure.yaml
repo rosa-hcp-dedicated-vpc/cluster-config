@@ -132,6 +132,10 @@ infrastructure:
                     type: url
                     rules:
                       - allow: [Domain, Component, System, API, Resource, Location]
+                  - target: https://raw.githubusercontent.com/rosa-hcp-dedicated-vpc/helm-repository/main/charts/rhdh-helm/ai-lab-template/org.yaml
+                    type: url
+                    rules:
+                      - allow: [Domain, Component, System, API, Resource, Location]
                 providers:
                   ocm:
                     default:
