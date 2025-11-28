@@ -56,9 +56,16 @@ infrastructure:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.14.1
   - chart: rhdh-helm
-    targetRevision: 1.6.2
+    targetRevision: 1.6.5
     namespace: backstage
     values:
+      # GitHub App Credentials - Retrieved from AWS Secrets Manager via ArgoCD Vault Plugin
+      github:
+        appId: "<path:np-hub-secret-3#appId>"
+        clientId: "<path:np-hub-secret-3#clientId>"
+        clientSecret: "<path:np-hub-secret-3#clientSecret>"
+        webhookSecret: "<path:np-hub-secret-3#webhookSecret>"
+        privateKey: "<path:np-hub-secret-3#privateKey>"
       keycloakUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.alde.p3.openshiftapps.com
       consoleLink:
         enabled: true
@@ -118,6 +125,15 @@ infrastructure:
               session:
                 secret: "$${BACKEND_SECRET}"
               signInPage: oidc
+              integrations:
+                github:
+                  - host: github.com
+                    apps:
+                      - appId: $${GITHUB_APP_ID}
+                        clientId: $${GITHUB_CLIENT_ID}
+                        clientSecret: $${GITHUB_CLIENT_SECRET}
+                        webhookSecret: $${GITHUB_WEBHOOK_SECRET}
+                        privateKey: $${GITHUB_PRIVATE_KEY}
               catalog:
                 locations:
                   - target: https://raw.githubusercontent.com/rosa-hcp-dedicated-vpc/helm-repository/main/charts/rhdh-helm/files/showcase-templates.yaml
