@@ -197,6 +197,13 @@ infrastructure:
                           frequency: { minutes: 1 }
                           timeout: { minutes: 5 }
                           initialDelay: { seconds: 15 }
+                  github:
+                    providerId:
+                      organization: "rosa-hcp-dedicated-vpc"
+                      schedule:
+                        frequency: { minutes: 30 }
+                        initialDelay: { seconds: 15 }
+                        timeout: { minutes: 15 }
               argocd:
                 appLocatorMethods:
                   - type: 'config'
