@@ -56,7 +56,7 @@ infrastructure:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.14.1
   - chart: rhdh-helm
-    targetRevision: 1.6.8
+    targetRevision: 1.6.9
     namespace: backstage
     values:
       # GitHub App Credentials - Retrieved from AWS Secrets Manager via ArgoCD Vault Plugin
@@ -153,7 +153,6 @@ infrastructure:
               integrations:
                 github:
                   - host: github.com
-                    token: "<path:np-hub-secret-3#token>"
                     apps:
                       - appId: "<path:np-hub-secret-3#appId>"
                         clientId: "<path:np-hub-secret-3#clientId>"
