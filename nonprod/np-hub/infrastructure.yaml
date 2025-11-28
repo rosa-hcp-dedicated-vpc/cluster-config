@@ -154,16 +154,11 @@ infrastructure:
                 github:
                   - host: github.com
                     apps:
-                      - appId:
-                          $env: GITHUB_APP_ID
-                        clientId:
-                          $env: GITHUB_CLIENT_ID
-                        clientSecret:
-                          $env: GITHUB_CLIENT_SECRET
-                        webhookSecret:
-                          $env: GITHUB_WEBHOOK_SECRET
-                        privateKey:
-                          $env: GITHUB_PRIVATE_KEY
+                      - appId: "<path:np-hub-secret-3#appId>"
+                        clientId: "<path:np-hub-secret-3#clientId>"
+                        clientSecret: "<path:np-hub-secret-3#clientSecret>"
+                        webhookSecret: "<path:np-hub-secret-3#webhookSecret>"
+                        privateKey: "<path:np-hub-secret-3#privateKey>"
               catalog:
                 locations:
                   - target: https://raw.githubusercontent.com/rosa-hcp-dedicated-vpc/helm-repository/main/charts/rhdh-helm/files/showcase-templates.yaml
