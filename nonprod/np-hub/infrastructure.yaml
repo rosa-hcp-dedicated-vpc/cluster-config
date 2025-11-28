@@ -55,7 +55,7 @@ infrastructure:
     values:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.14.1
-  -     chart: rhdh-helm
+  - chart: rhdh-helm
     targetRevision: 1.6.7
     namespace: backstage
     values:
