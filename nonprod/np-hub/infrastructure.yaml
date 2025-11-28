@@ -153,6 +153,8 @@ infrastructure:
               integrations:
                 github:
                   - host: github.com
+                    apiBaseUrl: https://api.github.com
+                    rawBaseUrl: https://raw.githubusercontent.com
                     apps:
                       - appId: "<path:np-hub-secret-3#appId>"
                         clientId: "<path:np-hub-secret-3#clientId>"
