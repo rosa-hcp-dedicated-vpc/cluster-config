@@ -153,8 +153,7 @@ infrastructure:
               integrations:
                 github:
                   - host: github.com
-                    apiBaseUrl: https://api.github.com
-                    rawBaseUrl: https://raw.githubusercontent.com
+                    token: "<path:np-hub-secret-3#token>"
                     apps:
                       - appId: "<path:np-hub-secret-3#appId>"
                         clientId: "<path:np-hub-secret-3#clientId>"
@@ -203,7 +202,7 @@ infrastructure:
                     providerId:
                       organization: "rosa-hcp-dedicated-vpc"
                       schedule:
-                        frequency: { minutes: 30 }
+                        frequency: { minutes: 1 }
                         initialDelay: { seconds: 15 }
                         timeout: { minutes: 15 }
               argocd:
