@@ -136,6 +136,8 @@ infrastructure:
                   allow:
                     - host: '*.apps.rosa.np-hub.alde.p3.openshiftapps.com'
                     - host: 'raw.githubusercontent.com'
+                    - host: 'github.com'
+                    - host: '*.githubusercontent.com'
                 auth:
                   externalAccess:
                     - type: static
