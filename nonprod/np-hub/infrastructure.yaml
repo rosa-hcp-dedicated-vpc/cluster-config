@@ -157,6 +157,7 @@ infrastructure:
                       - appId: "<path:np-hub-secret-3#appId>"
                         clientId: "<path:np-hub-secret-3#clientId>"
                         clientSecret: "<path:np-hub-secret-3#clientSecret>"
+                        webhookURL: "https://backstage-backstage.apps.rosa.np-hub.alde.p3.openshiftapps.com/api/github/webhook"
                         webhookSecret: "<path:np-hub-secret-3#webhookSecret>"
                         privateKey: "<path:np-hub-secret-3#privateKey>"
               catalog:
@@ -204,6 +205,16 @@ infrastructure:
                         frequency: { minutes: 1 }
                         initialDelay: { seconds: 15 }
                         timeout: { minutes: 15 }
+                  githubOrg:
+                    githubUrl: https://github.com
+                    orgs: ["osa-hcp-dedicated-vpc"]
+                    schedule:
+                      frequency:
+                        minutes: 2
+                      initialDelay:
+                        seconds: 15
+                      timeout:
+                        minutes: 15
               argocd:
                 appLocatorMethods:
                   - type: 'config'
