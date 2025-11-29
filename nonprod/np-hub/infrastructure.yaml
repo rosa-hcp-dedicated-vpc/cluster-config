@@ -161,6 +161,8 @@ infrastructure:
               integrations:
                 github:
                   - host: github.com
+                    apiBaseUrl: https://api.github.com
+                    rawBaseUrl: https://raw.githubusercontent.com
                     apps:
                       - appId: "$${GITHUB_APP_ID}"
                         clientId: "$${GITHUB_CLIENT_ID}"
