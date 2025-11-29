@@ -152,7 +152,7 @@ infrastructure:
               signInPage: oidc
               integrations:
                 github:
-                  - host: github.com
+                  - host: raw.githubusercontent.com
                     apiBaseUrl: https://api.github.com
                     rawBaseUrl: https://raw.githubusercontent.com
                     apps:
