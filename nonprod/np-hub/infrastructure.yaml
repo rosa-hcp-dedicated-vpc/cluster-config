@@ -56,7 +56,7 @@ infrastructure:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.14.1
   - chart: rhdh-helm
-    targetRevision: 1.7.0
+    targetRevision: 1.7.1
     namespace: backstage
     values:
       # GitHub App Credentials - Retrieved from AWS Secrets Manager via ArgoCD Vault Plugin
