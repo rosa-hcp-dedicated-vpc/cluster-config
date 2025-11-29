@@ -161,6 +161,7 @@ infrastructure:
                         webhookSecret: "$${GITHUB_WEBHOOK_SECRET}"
                         privateKey: |
                           $${GITHUB_PRIVATE_KEY}
+                        allowedInstallationOwners: ['rosa-hcp-dedicated-vpc']
               catalog:
                 locations:
                   - target: https://raw.githubusercontent.com/rosa-hcp-dedicated-vpc/helm-repository/main/charts/rhdh-helm/files/showcase-templates.yaml
