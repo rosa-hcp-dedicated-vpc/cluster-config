@@ -65,6 +65,8 @@ infrastructure:
         clientId: "<path:np-hub-secret-3#clientId>"
         clientSecret: "<path:np-hub-secret-3#clientSecret>"
         webhookSecret: "<path:np-hub-secret-3#webhookSecret>"
+        webhookUrl: "<path:np-hub-secret-3#webhookUrl>"
+        token: "<path:np-hub-secret-3#token>"
         privateKey: "<path:np-hub-secret-3#privateKey>"
       keycloakUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.alde.p3.openshiftapps.com
       consoleLink:
