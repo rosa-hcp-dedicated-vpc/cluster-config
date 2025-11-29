@@ -161,6 +161,15 @@ infrastructure:
                         webhookSecret: "$${GITHUB_WEBHOOK_SECRET}"
                         privateKey: |
                           $${GITHUB_PRIVATE_KEY}
+                  - host: raw.githubusercontent.com
+                    apps:
+                      - appId: "$${GITHUB_APP_ID}"
+                        clientId: "$${GITHUB_CLIENT_ID}"
+                        clientSecret: "$${GITHUB_CLIENT_SECRET}"
+                        webhookUrl: "$${GITHUB_WEBHOOK_URL}"
+                        webhookSecret: "$${GITHUB_WEBHOOK_SECRET}"
+                        privateKey: |
+                          $${GITHUB_PRIVATE_KEY}
               catalog:
                 locations:
                   - target: https://raw.githubusercontent.com/rosa-hcp-dedicated-vpc/helm-repository/main/charts/rhdh-helm/files/showcase-templates.yaml
