@@ -48,7 +48,7 @@ infrastructure:
       helper-operator:
         startingCSV: cluster-logging.v6.4.0
   - chart: openshift-pipelines-operator
-    targetRevision: 0.1.1
+    targetRevision: 0.1.13
     namespace: openshift-operators
     values:
       startingCSV: openshift-pipelines-operator-rh.v1.17.0
