@@ -47,7 +47,7 @@ infrastructure:
       region: ap-southeast-2
       helper-operator:
         startingCSV: cluster-logging.v6.4.0
-  - chart: openshift-pipelines-operator
+  - chart: openshift-piplines-operator
     targetRevision: 0.1.13
     namespace: openshift-operators
     values:
