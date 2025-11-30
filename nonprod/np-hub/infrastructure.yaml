@@ -234,7 +234,7 @@ infrastructure:
                     instances:
                       - name: application-gitops
                         url: https://application-gitops-server-application-gitops.apps.rosa.np-hub.alde.p3.openshiftapps.com
-                        token: "$${K8S_SERVICE_ACCOUNT_TOKEN}"
+                        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcmdvY2QiLCJzdWIiOiJiYWNrc3RhZ2U6YXBpS2V5IiwibmJmIjoxNzY0NDk3NDAyLCJpYXQiOjE3NjQ0OTc0MDIsImp0aSI6IjQwZGY5MDA0LTYxZjEtNDRlYi05MmIzLTY5OTU3OTczYWQ4NyJ9.Z6SIEx80oSZxbRxdOsR9NnTIXZmyJxMnrKZBYMmLyHw"
                       - name: cluster-gitops
                         url: https://cluster-gitops-server-openshift-gitops.apps.rosa.np-hub.alde.p3.openshiftapps.com
                         token: "$${K8S_SERVICE_ACCOUNT_TOKEN}"
