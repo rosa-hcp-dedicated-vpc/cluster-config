@@ -169,26 +169,26 @@ infrastructure:
               #     secretKeyRef:
               #       key: mcpToken
               #       name: lightspeed-mcp-token
-              - name: VLLM_URL
-                valueFrom:
-                  secretKeyRef:
-                    key: VLLM_URL
-                    name: llama-stack-secrets
-              - name: VLLM_API_KEY
-                valueFrom:
-                  secretKeyRef:
-                    key: VLLM_API_KEY
-                    name: llama-stack-secrets
-              - name: VALIDATION_PROVIDER
-                valueFrom:
-                  secretKeyRef:
-                    key: VALIDATION_PROVIDER
-                    name: llama-stack-secrets
-              - name: VALIDATION_MODEL_NAME
-                valueFrom:
-                  secretKeyRef:
-                    key: VALIDATION_MODEL_NAME
-                    name: llama-stack-secrets
+              # - name: VLLM_URL
+              #   valueFrom:
+              #     secretKeyRef:
+              #       key: VLLM_URL
+              #       name: llama-stack-secrets
+              # - name: VLLM_API_KEY
+              #   valueFrom:
+              #     secretKeyRef:
+              #       key: VLLM_API_KEY
+              #       name: llama-stack-secrets
+              # - name: VALIDATION_PROVIDER
+              #   valueFrom:
+              #     secretKeyRef:
+              #       key: VALIDATION_PROVIDER
+              #       name: llama-stack-secrets
+              # - name: VALIDATION_MODEL_NAME
+              #   valueFrom:
+              #     secretKeyRef:
+              #       key: VALIDATION_MODEL_NAME
+              #       name: llama-stack-secrets
             appConfig:
               app:
                 title: AI Rolling Demo Developer Hub
@@ -204,10 +204,10 @@ infrastructure:
                 cors:
                   origin: https://backstage-backstage.apps.rosa.np-hub.alde.p3.openshiftapps.com
                 # MCP Actions Plugin Sources (only used if lightspeed.enabled: true)
-                actions:
-                  pluginSources:
-                    - 'software-catalog-mcp-tool'
-                    - 'techdocs-mcp-tool'
+                # actions:
+                #   pluginSources:
+                #     - 'software-catalog-mcp-tool'
+                #     - 'techdocs-mcp-tool'
            # AI Experience config
                 csp:
                   upgrade-insecure-requests: false
@@ -260,10 +260,10 @@ infrastructure:
                         token: "my-backend-secret-token-12345"
                         subject: backstage-server
                     # MCP Authentication (only used if lightspeed.enabled: true)
-                    - type: static
-                      options:
-                        token: "$${MCP_TOKEN}"
-                        subject: mcp-clients
+                    # - type: static
+                    #   options:
+                    #     token: "$${MCP_TOKEN}"
+                    #     subject: mcp-clients
               auth:
                 environment: production
                 providers:
@@ -299,10 +299,10 @@ infrastructure:
                         privateKey: |
                           $${GITHUB_PRIVATE_KEY}
               # Lightspeed MCP Servers Configuration (only used if lightspeed.enabled: true)
-              lightspeed:
-                mcpServers:
-                  - name: mcp-integration-tools
-                    token: "$${MCP_TOKEN}"
+              # lightspeed:
+              #   mcpServers:
+              #     - name: mcp-integration-tools
+              #       token: "$${MCP_TOKEN}"
               catalog:
                 locations:
                   - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/blob/main/charts/rhdh-helm/files/showcase-templates.yaml
