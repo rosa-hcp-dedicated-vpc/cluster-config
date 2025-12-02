@@ -277,6 +277,11 @@ infrastructure:
                       #   resolvers:
                       #     - resolver: emailMatchingUserEntityProfileEmail
                       #     - resolver: emailLocalPartMatchingUserEntityName
+                    development:
+                      metadataUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.alde.p3.openshiftapps.com/realms/backstage/.well-known/openid-configuration
+                      clientId: backstage
+                      clientSecret: "$${KEYCLOAK_CLIENT_SECRET}"
+                      prompt: auto
               session:
                 secret: "$${BACKEND_SECRET}"
               signInPage: oidc
