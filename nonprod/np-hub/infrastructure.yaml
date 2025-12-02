@@ -60,7 +60,7 @@ infrastructure:
     namespace: backstage
     values:
       # Quay/Red Hat Pull Secret - Retrieved from AWS Secrets Manager via ArgoCD Vault Plugin
-      quayPullSecret: <np-hub-secret-5>
+      quayPullSecret: "<path:np-hub-secret-5#dockerconfigjson>"
       # GitHub App Credentials - Retrieved from AWS Secrets Manager via ArgoCD Vault Plugin
       github:
         appId: "<path:np-hub-secret-3#appId>"
