@@ -56,7 +56,7 @@ infrastructure:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.14.1
   - chart: rhdh-helm
-    targetRevision: 1.11.8
+    targetRevision: 1.11.9
     namespace: backstage
     ignoreContainerDrift: true
     values:
