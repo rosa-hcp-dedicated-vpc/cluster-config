@@ -58,6 +58,7 @@ infrastructure:
   - chart: rhdh-helm
     targetRevision: 1.11.5
     namespace: backstage
+    ignoreContainerDrift: true
     values:
       # Quay/Red Hat Pull Secret - Retrieved from AWS Secrets Manager via ArgoCD Vault Plugin
       quayPullSecret: "<path:np-hub-secret-5#dockerconfigjson>"
