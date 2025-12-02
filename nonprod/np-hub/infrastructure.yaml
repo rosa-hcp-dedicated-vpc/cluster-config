@@ -195,10 +195,10 @@ infrastructure:
                 baseUrl: https://backstage-backstage.apps.rosa.np-hub.alde.p3.openshiftapps.com
                 analytics:
                   adoptionInsights:
-                  maxBufferSize: 20
-                  flushInterval: 5000
-                  debug: false
-                  licensedUsers: 50
+                    maxBufferSize: 20
+                    flushInterval: 5000
+                    debug: false
+                    licensedUsers: 50
               backend:
                 baseUrl: https://backstage-backstage.apps.rosa.np-hub.alde.p3.openshiftapps.com
                 cors:
