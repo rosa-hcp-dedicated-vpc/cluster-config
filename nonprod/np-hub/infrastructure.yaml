@@ -95,7 +95,7 @@ infrastructure:
         clusterReaderEnabled: false  # Set to true to enable cluster reader permissions
       # Sidecars for Lightspeed and Model Catalog (DISABLED BY DEFAULT)
       sidecars:
-        enabled: false  # Set to true to enable sidecar containers
+        enabled: true # Set to true to enable sidecar containers
         serviceAccount: default
         image: quay.io/redhat-ai-dev/utils:latest
         locationImage: quay.io/redhat-ai-dev/model-catalog-location-service:latest
