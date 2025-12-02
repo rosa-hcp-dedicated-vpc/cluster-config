@@ -164,11 +164,11 @@ infrastructure:
               - name: NODE_TLS_REJECT_UNAUTHORIZED
                 value: "0"
               # Lightspeed/MCP Configuration (only used if lightspeed.enabled: true)
-              - name: MCP_TOKEN
-                valueFrom:
-                  secretKeyRef:
-                    key: mcpToken
-                    name: lightspeed-mcp-token
+              # - name: MCP_TOKEN
+              #   valueFrom:
+              #     secretKeyRef:
+              #       key: mcpToken
+              #       name: lightspeed-mcp-token
               - name: VLLM_URL
                 valueFrom:
                   secretKeyRef:
