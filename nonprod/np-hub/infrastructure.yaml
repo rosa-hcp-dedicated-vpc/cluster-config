@@ -56,7 +56,7 @@ infrastructure:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.14.1
   - chart: rhdh-helm
-    targetRevision: 1.11.4
+    targetRevision: 1.11.5
     namespace: backstage
     values:
       # Quay/Red Hat Pull Secret - Retrieved from AWS Secrets Manager via ArgoCD Vault Plugin
