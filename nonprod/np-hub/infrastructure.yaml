@@ -56,11 +56,11 @@ infrastructure:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.14.1
   - chart: rhdh-helm
-    targetRevision: 1.11.0
+    targetRevision: 1.11.1
     namespace: backstage
     values:
       # Quay/Red Hat Pull Secret - Retrieved from AWS Secrets Manager via ArgoCD Vault Plugin
-      quayPullSecret: <path:np-hub-secret-5>
+      quayPullSecret: <np-hub-secret-5>
       # GitHub App Credentials - Retrieved from AWS Secrets Manager via ArgoCD Vault Plugin
       github:
         appId: "<path:np-hub-secret-3#appId>"
