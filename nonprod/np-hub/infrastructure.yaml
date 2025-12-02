@@ -56,9 +56,11 @@ infrastructure:
       helper-operator:
         startingCSV: advanced-cluster-management.v2.14.1
   - chart: rhdh-helm
-    targetRevision: 1.8.3
+    targetRevision: 1.11.0
     namespace: backstage
     values:
+      # Quay/Red Hat Pull Secret - Retrieved from AWS Secrets Manager via ArgoCD Vault Plugin
+      quayPullSecret: <path:np-hub-secret-5>
       # GitHub App Credentials - Retrieved from AWS Secrets Manager via ArgoCD Vault Plugin
       github:
         appId: "<path:np-hub-secret-3#appId>"
@@ -68,6 +70,39 @@ infrastructure:
         webhookUrl: "<path:np-hub-secret-3#webhookUrl>"
         privateKey: "<path:np-hub-secret-3#privateKey>"
       keycloakUrl: https://keycloak-rhbk-operator.apps.rosa.np-hub.alde.p3.openshiftapps.com
+      # Lightspeed AI Assistant Configuration (DISABLED BY DEFAULT)
+      lightspeed:
+        enabled: false  # Set to true to enable Lightspeed AI assistant
+        vllmUrl: "<path:np-hub-secret-4#vllmUrl>"
+        vllmApiKey: "<path:np-hub-secret-4#vllmApiKey>"
+        validationProvider: "<path:np-hub-secret-4#validationProvider>"
+        validationModelName: "<path:np-hub-secret-4#validationModelName>"
+        mcpToken: "<path:np-hub-secret-4#mcpToken>"
+        postgres:
+          enabled: false  # Set to true to enable PostgreSQL for Lightspeed
+          namespace: lightspeed-postgres
+          image: registry.redhat.io/rhel9/postgresql-16:latest
+          storageSize: 5Gi
+          user: "<path:np-hub-secret-4#lightspeedPostgresUser>"
+          password: "<path:np-hub-secret-4#lightspeedPostgresPassword>"
+          dbName: "<path:np-hub-secret-4#lightspeedPostgresDb>"
+      # Model Catalog Configuration (DISABLED BY DEFAULT)
+      modelCatalog:
+        enabled: false  # Set to true to enable model catalog integration with RHOAI
+      # Kubernetes Cluster Reader (DISABLED BY DEFAULT)
+      kubernetes:
+        clusterReaderEnabled: false  # Set to true to enable cluster reader permissions
+      # Sidecars for Lightspeed and Model Catalog (DISABLED BY DEFAULT)
+      sidecars:
+        enabled: false  # Set to true to enable sidecar containers
+        serviceAccount: default
+        image: quay.io/redhat-ai-dev/utils:latest
+        locationImage: quay.io/redhat-ai-dev/model-catalog-location-service:latest
+        storageRestImage: quay.io/redhat-ai-dev/model-catalog-storage-rest:latest
+        rhoaiNormalizerImage: quay.io/redhat-ai-dev/model-catalog-rhoai-normalizer:latest
+        llamaStackImage: quay.io/redhat-ai-dev/llama-stack:0.1.0
+        lightspeedCoreImage: quay.io/lightspeed-core/lightspeed-stack:dev-20251021-ee9f08f
+        feedbackHarvesterImage: quay.io/redhat-ai-dev/feedback-harvester:v0.1.0
       consoleLink:
         enabled: true
         url: https://backstage-backstage.apps.rosa.np-hub.alde.p3.openshiftapps.com
@@ -125,25 +160,110 @@ infrastructure:
                     name: github-app-credentials
               - name: LOG_LEVEL
                 value: debug
+              # Disable TLS verification (for development/testing only - NOT recommended for production)
+              - name: NODE_TLS_REJECT_UNAUTHORIZED
+                value: "0"
+              # Lightspeed/MCP Configuration (only used if lightspeed.enabled: true)
+              - name: MCP_TOKEN
+                valueFrom:
+                  secretKeyRef:
+                    key: mcpToken
+                    name: lightspeed-mcp-token
+              - name: VLLM_URL
+                valueFrom:
+                  secretKeyRef:
+                    key: VLLM_URL
+                    name: llama-stack-secrets
+              - name: VLLM_API_KEY
+                valueFrom:
+                  secretKeyRef:
+                    key: VLLM_API_KEY
+                    name: llama-stack-secrets
+              - name: VALIDATION_PROVIDER
+                valueFrom:
+                  secretKeyRef:
+                    key: VALIDATION_PROVIDER
+                    name: llama-stack-secrets
+              - name: VALIDATION_MODEL_NAME
+                valueFrom:
+                  secretKeyRef:
+                    key: VALIDATION_MODEL_NAME
+                    name: llama-stack-secrets
             appConfig:
               app:
+                title: AI Rolling Demo Developer Hub
                 baseUrl: https://backstage-backstage.apps.rosa.np-hub.alde.p3.openshiftapps.com
+                analytics:
+                  adoptionInsights:
+                  maxBufferSize: 20
+                  flushInterval: 5000
+                  debug: false
+                  licensedUsers: 50
               backend:
                 baseUrl: https://backstage-backstage.apps.rosa.np-hub.alde.p3.openshiftapps.com
                 cors:
                   origin: https://backstage-backstage.apps.rosa.np-hub.alde.p3.openshiftapps.com
+                # MCP Actions Plugin Sources (only used if lightspeed.enabled: true)
+                actions:
+                  pluginSources:
+                    - 'software-catalog-mcp-tool'
+                    - 'techdocs-mcp-tool'
+           # AI Experience config
+                csp:
+                  upgrade-insecure-requests: false
+                  img-src:
+                    - "'self'"
+                    - "data:"
+                    - https://img.freepik.com
+                    - https://cdn.dribbble.com
+                    - https://upload.wikimedia.org
+                    - https://podman-desktop.io
+                    - https://argo-cd.readthedocs.io
+                    - https://instructlab.ai
+                    - https://quay.io
+                    - https://news.mit.edu
+                  script-src:
+                    - "'self'"
+                    - "'unsafe-eval'"
+                    - https://cdn.jsdelivr.net
+                  connect-src:
+                    - "'self'"
+                    - https://api.github.com
+                    - https://raw.githubusercontent.com
+                    - https://github.com
+                    - https://*.githubusercontent.com
+                    - https://*.apps.rosa.np-hub.alde.p3.openshiftapps.com
+                    - https://*.np-ai-1.p867.p3.openshiftapps.com
                 reading:
                   allow:
                     - host: '*.apps.rosa.np-hub.alde.p3.openshiftapps.com'
+                    - host: '*.np-ai-1.p867.p3.openshiftapps.com'
                     - host: 'raw.githubusercontent.com'
                     - host: 'github.com'
                     - host: '*.githubusercontent.com'
+                    - host: '*.apps.rosa.np-ai-1.p867.p3.openshiftapps.com'
+                    - host: example.com
+                    - host: '*.mozilla.org'
+                    - host: '*.openshift.com'
+                    - host: '*.openshiftapps.com'
+                    - host: '10.*:9090'
+                    - host: '127.0.0.1:9090'
+                    - host: '127.0.0.1:8888'
+                    - host: '127.0.0.1:7070'
+                    - host: 'localhost:9090'
+                    - host: 'localhost:8888'
+                    - host: 'localhost:7070'
                 auth:
                   externalAccess:
                     - type: static
                       options:
                         token: "my-backend-secret-token-12345"
                         subject: backstage-server
+                    # MCP Authentication (only used if lightspeed.enabled: true)
+                    - type: static
+                      options:
+                        token: "$${MCP_TOKEN}"
+                        subject: mcp-clients
               auth:
                 environment: production
                 providers:
@@ -173,6 +293,11 @@ infrastructure:
                         webhookSecret: "$${GITHUB_WEBHOOK_SECRET}"
                         privateKey: |
                           $${GITHUB_PRIVATE_KEY}
+              # Lightspeed MCP Servers Configuration (only used if lightspeed.enabled: true)
+              lightspeed:
+                mcpServers:
+                  - name: mcp-integration-tools
+                    token: "$${MCP_TOKEN}"
               catalog:
                 locations:
                   - target: https://github.com/rosa-hcp-dedicated-vpc/helm-repository/blob/main/charts/rhdh-helm/files/showcase-templates.yaml
