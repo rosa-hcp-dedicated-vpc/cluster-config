@@ -63,7 +63,7 @@ infrastructure:
     values:
       helper-operator:
         #startingCSV: rhods-operator.2.22.2
-        startingCSV: rhods-operator.3.1.0
+        startingCSV: rhods-operator.3.0.0
   - chart: lws-operator
     targetRevision: 0.1.0
     namespace: openshift-lws-operator
