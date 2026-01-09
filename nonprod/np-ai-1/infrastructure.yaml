@@ -64,6 +64,16 @@ infrastructure:
       helper-operator:
         #startingCSV: rhods-operator.2.22.2
         startingCSV: rhods-operator.3.1.0
+  - chart: lws-operator
+    targetRevision: 0.1.0
+    namespace: openshift-lws-operator
+    values:
+      startingCSV: leader-worker-set.v1.0.0
+  - chart: rhcl-operator
+    targetRevision: 0.1.0
+    namespace: kuadrant-system
+    values:
+      startingCSV: rhcl-operator.v1.2.1
   # - chart: servicemesh-operator
   #   targetRevision: 0.4.10
   #   namespace: openshift-operators
@@ -93,7 +103,7 @@ infrastructure:
     targetRevision: 0.3.7
     namespace: openshift-lightspeed
     values:
-      startingCSV: lightspeed-operator.v1.0.7
+      startingCSV: lightspeed-operator.v1.0.8
       modelURL: "https://mistral-small-24b-instruct-quantized-mistral-ai.apps.rosa.np-ai-1.p867.p3.openshiftapps.com/v1"
   - chart: nfd-operator
     targetRevision: 0.3.10
