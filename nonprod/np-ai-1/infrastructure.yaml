@@ -58,7 +58,7 @@ infrastructure:
         operatorName: openshift-pipelines-operator-rh
         csv: openshift-pipelines-operator-rh.v1.17.0
   - chart: rhods-operator
-    targetRevision: 1.3.5
+    targetRevision: 1.3.6
     namespace: redhat-ods-operator
     values:
       helper-operator:
